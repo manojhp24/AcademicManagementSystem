@@ -4,10 +4,12 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>SAMS | admin</title>
     <link
         href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css"
         rel="stylesheet" />
+    <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
+
 </head>
 
 <body>
@@ -113,7 +115,7 @@
                         </li>
                         <li>
                             <a
-                                href="#"
+                                href="{{ route('students.create') }}"
                                 class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
@@ -329,19 +331,16 @@
         </div>
     </aside>
 
-    <div class="sm:ml-64">
+    <div class="sm:ml-64 min-h-screen">
         <div
             class="">
-
-
-            <nav class="bg-white border-b dark:bg-gray-900">
+            <nav class="bg-white border-b" style="background-color: #1e2939;">
                 <div class="max-w-screen-xl mx-auto px-4 py-2 flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
 
-                    <!-- Logo + Name -->
                     <div class="flex items-center justify-between">
                         <a href="#" class="flex items-center space-x-2 rtl:space-x-reverse">
-                            <img src="../public/assets/images/logo.png" class="h-6 w-6 md:h-8 md:w-8" alt="Logo" />
-                            <span class="text-lg md:text-2xl font-semibold dark:text-white">Gym Manager</span>
+                            <!-- <img src="{{asset('images/logo.png')}}" class="h-8 w-8 md:h-8 md:w-8" alt="Logo" /> -->
+                            <span class="text-lg md:text-2xl font-bold dark:text-white">SAMS</span>
                         </a>
                     </div>
 
@@ -373,10 +372,12 @@
                             </div>
                         </div>
                     </div>
-
-
                 </div>
             </nav>
+
+            <main class="min-h-screen flex items-center justify-center bg-gray-900">
+                @yield('content')
+            </main>
 
 
 
