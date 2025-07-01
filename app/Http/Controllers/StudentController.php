@@ -14,9 +14,9 @@ class StudentController extends Controller
     public function view()
     {
         if (request()->ajax()) {
-            return view('admin.students.partials.viewstudents'); // without layout
+            return view('students.viewstudents'); // without layout
         }
 
-        return view('admin.students.viewstudents'); // full page with layout
+        return view('students.viewstudents'); // full page with layout
     }
 }
