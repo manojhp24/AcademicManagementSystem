@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 class AdminController extends Controller
 {
     public function index(){
+        if(request()->ajax()){
+            return view('admin.partials.contents');
+        }
         return view('admin.dashboard');
     }
 

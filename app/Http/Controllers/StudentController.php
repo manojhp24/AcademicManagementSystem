@@ -8,15 +8,20 @@ class StudentController extends Controller
 {
     public function create()
     {
+        if(request()->ajax()){
+            return view('students.partials.studentsaddform');
+        }
+
+
         return view('students.addstudent');
     }
 
     public function view()
     {
         if (request()->ajax()) {
-            return view('students.viewstudents'); // without layout
+            return view('students.partials.studentslisttable'); 
         }
 
-        return view('students.viewstudents'); // full page with layout
+        return view('students.viewstudents'); 
     }
 }

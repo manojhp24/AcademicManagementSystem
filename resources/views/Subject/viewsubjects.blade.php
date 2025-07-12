@@ -2,7 +2,5 @@
 
 @section('content')
 
-
-@include('students.partials.studentslisttable')
-
+@include('subject.partials.subjectstablelist')
 @endsection
