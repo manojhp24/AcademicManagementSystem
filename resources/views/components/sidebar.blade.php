@@ -74,7 +74,7 @@
                             <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
                             <path fill-rule="evenodd" d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5" />
                         </svg>
-                        Add Lecturers
+                        Add Faculties
                     </a>
                 </li>
                 <li>
@@ -84,7 +84,7 @@
                             <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8m8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7" />
                         </svg>
 
-                        View Lecturers
+                        View Faculties
                     </a>
                 </li>
 
@@ -145,7 +145,12 @@
                 </li>
 
             </ul>
-            <a href="#" class="block px-4 py-2 hover:bg-blue-500 rounded-lg">📊 Reports</a>
+            <a href="#" class="block px-4 py-2 hover:bg-blue-500 rounded-lg">
+                <span class="flex items-center gap-2">
+                    <img src="{{ asset('images/report.svg') }}" alt="" class="w-6 h-6 text-white">
+                    <span class="">Report</span>
+                </span> 
+            </a>
         </nav>
     </div>
 </aside>

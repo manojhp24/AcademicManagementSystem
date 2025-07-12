@@ -7,7 +7,7 @@
                 13.067 13.067 0 0 1-6.761 1.873c-2.472 0-4.786-.684-6.76-1.873a.75.75
                 0 0 1-.364-.63l-.001-.122Z" />
             </svg>
-            Add New Lecturer
+            Add New Faculty
         </h2>
         <p class="text-sm text-gray-500 mt-1">Fill in the form below to register a new Lecturer.</p>
     </div>
