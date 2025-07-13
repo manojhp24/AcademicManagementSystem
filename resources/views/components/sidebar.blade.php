@@ -11,7 +11,7 @@
 
         <nav>
             <a href="{{route('admin.dashboard')}}"
-                class="ajax-link flex items-center px-4 py-2 mb-2 rounded-lg hover:bg-blue-500 bg-blue-700 font-semibold">
+                class="dashboard-button ajax-link flex items-center px-4 py-2 mb-2 rounded-lg hover:bg-blue-500 bg-blue-700 font-semibold">
                 <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0,0,256,256" class="w-5 h-5">
                     <g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal">
                         <g transform="scale(5.33333,5.33333)">
@@ -22,7 +22,7 @@
             </a>
 
             <button type="button"
-                class="flex items-center justify-between w-full px-4 py-2 mb-2 hover:bg-blue-500 rounded-lg"
+                class="student-button flex items-center justify-between w-full px-4 py-2 mb-2 hover:bg-blue-500 rounded-lg"
                 data-collapse-toggle="students-dropdown"
                 aria-controls="students-dropdown"
                 aria-expanded="false">
@@ -57,7 +57,7 @@
             </ul>
 
 
-            <button type="button" class="flex items-center justify-between w-full px-4 py-2 mb-2 hover:bg-blue-500 rounded-lg" data-collapse-toggle="lecture-dropdown" aria-controls="lecture-dropdown" aria-expanded="false">
+            <button type="button" class="faculty-button flex items-center justify-between w-full px-4 py-2 mb-2 hover:bg-blue-500 rounded-lg" data-collapse-toggle="lecture-dropdown" aria-controls="lecture-dropdown" aria-expanded="false">
                 <span class="flex items-center">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="currentColor" class="bi bi-people-fill" viewBox="0 0 16 16">
                         <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6m-5.784 6A2.24 2.24 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.3 6.3 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1zM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5" />
@@ -89,7 +89,7 @@
                 </li>
 
             </ul>
-            <button type="button" class="flex items-center justify-between w-full px-4 py-2 mb-2 hover:bg-blue-500 rounded-lg" data-collapse-toggle="class-dropdown" aria-controls="class-dropdown" aria-expanded="false">
+            <button type="button" class="class-button flex items-center justify-between w-full px-4 py-2 mb-2 hover:bg-blue-500 rounded-lg" data-collapse-toggle="class-dropdown" aria-controls="class-dropdown" aria-expanded="false">
                 <span class="flex items-center">
                     <img src="{{ asset('images/classroom.svg') }}" alt="" class="w-6 h-6 text-white">
                 </span> <span class="ms-3 text-gray-900 dark:text-gray-100">Class</span> <svg class="w-4 h-4 ml-auto" fill="none" stroke="currentColor" stroke-width="2"
@@ -117,7 +117,7 @@
                 </li>
 
             </ul>
-            <button type="button" class="flex items-center justify-between w-full px-4 py-2 mb-2 hover:bg-blue-500 rounded-lg" data-collapse-toggle="subject-dropdown" aria-controls="subject-dropdown" aria-expanded="false">
+            <button type="button" class="subject-button flex items-center justify-between w-full px-4 py-2 mb-2 hover:bg-blue-500 rounded-lg" data-collapse-toggle="subject-dropdown" aria-controls="subject-dropdown" aria-expanded="false">
                 <span class="flex items-center">
                     <img src="{{ asset('images/subject.svg') }}" alt="" class="w-6 h-6 text-white">
                 </span> <span class="ms-3 text-gray-900 dark:text-gray-100">Subjects</span> <svg class="w-4 h-4 ml-auto" fill="none" stroke="currentColor" stroke-width="2"
