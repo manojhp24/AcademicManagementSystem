@@ -8,16 +8,23 @@
  */
 
 
-$(document).ready(function () {
+$(function () {
+
+    if ($(".data-table").length) {
+        $(".data-table").each(function () {
+            $(this).DataTable();
+        });
+    }
+
+    // AJAX navigation
     $(document).on("click", ".ajax-link", function (e) {
         e.preventDefault();
         const url = $(this).attr("href");
         $(".ajax-link").removeClass("bg-blue-700");
-
         $(this).addClass("bg-blue-700");
 
         $("#main-content").html(
-            ` <div style="display: flex; justify-content: center; align-items: center; height: 300px;"><div class="loader"></div></div>`
+            `<div style="display: flex; justify-content: center; align-items: center; height: 300px;"><div class="loader"></div></div>`
         );
 
         $.ajax({
@@ -26,6 +33,13 @@ $(document).ready(function () {
             success: function (response) {
                 $("#main-content").html(response);
                 window.history.pushState({}, "", url);
+
+                // Re-initialize DataTables after AJAX content load
+                if ($(".data-table").length) {
+                    $(".data-table").each(function () {
+                        $(this).DataTable();
+                    });
+                }
             },
             error: function () {
                 $("#main-content").html(

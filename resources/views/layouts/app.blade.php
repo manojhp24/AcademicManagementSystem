@@ -7,7 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+    <link rel="stylesheet" href="{{ asset('css/datatables.css') }}">
+
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
         .loader {
             width: 50px;
             aspect-ratio: 1;
@@ -85,7 +89,7 @@
         </div>
 
         <!-- Page Content -->
-        <div class="p-6 flex-1" id="main-content">
+        <div class="p-4 flex-1" id="main-content">
             @yield('content')
         </div>
     </div>
@@ -99,9 +103,21 @@
         });
     </script>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{{ asset('js/jquery_libreries/jquery.js') }}"></script>
+
+    <!-- Ajax for Reloading -->
     <script src="{{ asset('js/ajax-scripts.js') }}"></script>
+
+    <!-- Hide and Unhide the Sidebar buttons -->
     <script src="{{ asset('js/sidebar-dropdown-handler.js') }}"></script>
+
+    <!-- DataTable -->
+    <script src="{{ asset('js/jquery_libreries/datatables.js') }}"></script>
+    <script>
+        $(function() {
+            $(".student-table").DataTable();
+        })
+    </script>
 
 
 </body>

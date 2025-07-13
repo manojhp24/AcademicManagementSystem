@@ -51,29 +51,44 @@
     </div>
 
     <!-- Student Table -->
-    <div class="overflow-x-auto shadow rounded-lg">
-        <table class="w-full text-sm text-left text-gray-700">
+    <div class="overflow-x-auto shadow rounded-lg p-4">
+        <table class="data-table class-table w-full text-sm text-left text-gray-700">
             <thead class="bg-gray-100 text-xs uppercase">
-                <tr>
-                    <th class="p-3">ID</th>
-                    <th class="p-3">Program</th>
-                    <th class="p-3">Academeic Year</th>
-                    <th class="p-3">Section</th>
-                    <th class="p-3">Semester</th>
-                    <th class="p-3">Actions</th>
+                <tr class="bg-blue-600 text-white">
+                    <th class="p-3 border border-gray-300">ID</th>
+                    <th class="p-3 border border-gray-300">Program</th>
+                    <th class="p-3 border border-gray-300">Academeic Year</th>
+                    <th class="p-3 border border-gray-300">Section</th>
+                    <th class="p-3 border border-gray-300">Semester</th>
+                    <th class="p-3 border border-gray-300">Actions</th>
                 </tr>
             </thead>
             <tbody>
                 <!-- Example Row -->
                 <tr class="bg-white border-b hover:bg-gray-50">
-                    <td class="p-3 font-medium text-gray-900">MCA001</td>
-                    <td class="p-3">MCA</td>
-                    <td class="p-3">1st Year</td>
-                    <td class="p-3">A</td>
-                    <td class="p-3">1</td>
-                    <td class="p-3 flex gap-2">
-                        <a href="#" class="text-blue-600 hover:underline">Edit</a>
-                        <a href="#" class="text-red-600 hover:underline">Remove</a>
+                    <td class="p-3 border border-gray-300 font-medium text-gray-900">MCA001</td>
+                    <td class="p-3 border border-gray-300">MCA</td>
+                    <td class="p-3 border border-gray-300">1st Year</td>
+                    <td class="p-3 border border-gray-300">A</td>
+                    <td class="p-3 border border-gray-300">1</td>
+                    <td class="p-3 border border-gray-300 flex gap-2">
+                        <div class="flex gap-2">
+                            <button class="bg-blue-600 text-white px-6 py-1 rounded hover:bg-blue-700 text-sm">Edit</button>
+                            <button class="bg-red-600 text-white px-3 py-1 rounded hover:bg-red-700 text-sm">Remove</button>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="bg-white border-b hover:bg-gray-50">
+                    <td class="p-3 border border-gray-300 font-medium text-gray-900">MCA001</td>
+                    <td class="p-3 border border-gray-300">MBA</td>
+                    <td class="p-3 border border-gray-300">1st Year</td>
+                    <td class="p-3 border border-gray-300">B</td>
+                    <td class="p-3 border border-gray-300">1</td>
+                    <td class="p-3 border border-gray-300 flex gap-2">
+                        <div class="flex gap-2">
+                            <button class="bg-blue-600 text-white px-6 py-1 rounded hover:bg-blue-700 text-sm">Edit</button>
+                            <button class="bg-red-600 text-white px-3 py-1 rounded hover:bg-red-700 text-sm">Remove</button>
+                        </div>
                     </td>
                 </tr>
                 <!-- Repeat more rows -->

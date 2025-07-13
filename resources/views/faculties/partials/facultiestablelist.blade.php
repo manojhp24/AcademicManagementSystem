@@ -34,58 +34,64 @@
     </div>
 
     <!-- Table Section -->
-    <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
-        <table class="w-full text-sm text-left text-gray-500">
+    <div class="relative overflow-x-auto shadow-md sm:rounded-lg p-4">
+        <table class="data-table faculty-table w-full text-sm text-left text-gray-500">
             <thead class="text-xs text-gray-700 uppercase bg-gray-50">
-                <tr>
-                    <th class="px-6 py-3">ID</th>
-                    <th class="px-6 py-3">Name</th>
-                    <th class="px-6 py-3">Email</th>
-                    <th class="px-6 py-3">Phone</th>
-                    <th class="px-6 py-3">Subject</th>
-                    <th class="px-6 py-3">Status</th>
-                    <th class="px-6 py-3">Date Added</th>
-                    <th class="px-6 py-3">Action</th>
+                <tr class="bg-blue-600 text-white">
+                    <th class="px-6 py-3 border border-gray-300">ID</th>
+                    <th class="px-6 py-3 border border-gray-300">Name</th>
+                    <th class="px-6 py-3 border border-gray-300">Email</th>
+                    <th class="px-6 py-3 border border-gray-300">Phone</th>
+                    <th class="px-6 py-3 border border-gray-300">Subject</th>
+                    <th class="px-6 py-3 border border-gray-300">Status</th>
+                    <th class="px-6 py-3 border border-gray-300">Date Added</th>
+                    <th class="px-6 py-3 border border-gray-300">Action</th>
                 </tr>
             </thead>
             <tbody>
                 <tr class="bg-white border-b hover:bg-gray-50">
-                    <td class="px-6 py-4">L001</td>
-                    <td class="px-6 py-4">Dr. Priya Sharma</td>
-                    <td class="px-6 py-4">priya.sharma@college.edu</td>
-                    <td class="px-6 py-4">+91 9876543210</td>
-                    <td class="px-6 py-4">Computer Science</td>
-                    <td class="px-6 py-4 text-green-600">Active</td>
-                    <td class="px-6 py-4">2024-06-10</td>
-                    <td class="px-6 py-4 flex gap-3">
-                        <a href="#" class="text-blue-600 hover:underline">Edit</a>
-                        <a href="#" class="text-red-600 hover:underline">Delete</a>
+                    <td class="px-6 py-4 border border-gray-300">L001</td>
+                    <td class="px-6 py-4 border border-gray-300">Dr. Priya Sharma</td>
+                    <td class="px-6 py-4 border border-gray-300">priya.sharma@college.edu</td>
+                    <td class="px-6 py-4 border border-gray-300">+91 9876543210</td>
+                    <td class="px-6 py-4 border border-gray-300">Computer Science</td>
+                    <td class="px-6 py-4 border border-gray-300 text-green-600">Active</td>
+                    <td class="px-6 py-4 border border-gray-300">2024-06-10</td>
+                    <td class="px-6 py-4 border border-gray-300 flex gap-3">
+                        <div class="flex gap-2">
+                            <button class="bg-blue-600 text-white px-6 py-1 rounded hover:bg-blue-700 text-sm">Edit</button>
+                            <button class="bg-red-600 text-white px-3 py-1 rounded hover:bg-red-700 text-sm">Remove</button>
+                        </div>
                     </td>
                 </tr>
                 <tr class="bg-white border-b hover:bg-gray-50">
-                    <td class="px-6 py-4">L002</td>
-                    <td class="px-6 py-4">Mr. Anil Kumar</td>
-                    <td class="px-6 py-4">anil.kumar@college.edu</td>
-                    <td class="px-6 py-4">+91 9876543211</td>
-                    <td class="px-6 py-4">Mathematics</td>
-                    <td class="px-6 py-4 text-green-600">Active</td>
-                    <td class="px-6 py-4">2024-06-12</td>
-                    <td class="px-6 py-4 flex gap-3">
-                        <a href="#" class="text-blue-600 hover:underline">Edit</a>
-                        <a href="#" class="text-red-600 hover:underline">Delete</a>
+                    <td class="px-6 py-4 border border-gray-300">L002</td>
+                    <td class="px-6 py-4 border border-gray-300">Mr. Anil Kumar</td>
+                    <td class="px-6 py-4 border border-gray-300">anil.kumar@college.edu</td>
+                    <td class="px-6 py-4 border border-gray-300">+91 9876543211</td>
+                    <td class="px-6 py-4 border border-gray-300">Mathematics</td>
+                    <td class="px-6 py-4 border border-gray-300 text-green-600">Active</td>
+                    <td class="px-6 py-4 border border-gray-300">2024-06-12</td>
+                    <td class="px-6 py-4 border border-gray-300 flex gap-3">
+                        <div class="flex gap-2">
+                            <button class="bg-blue-600 text-white px-6 py-1 rounded hover:bg-blue-700 text-sm">Edit</button>
+                            <button class="bg-red-600 text-white px-3 py-1 rounded hover:bg-red-700 text-sm">Remove</button>
+                        </div>
                     </td>
                 </tr>
                 <tr class="bg-white border-b hover:bg-gray-50">
-                    <td class="px-6 py-4">L003</td>
-                    <td class="px-6 py-4">Ms. Radhika Mehta</td>
-                    <td class="px-6 py-4">radhika.mehta@college.edu</td>
-                    <td class="px-6 py-4">+91 9876543212</td>
-                    <td class="px-6 py-4">Physics</td>
-                    <td class="px-6 py-4 text-red-600">Inactive</td>
-                    <td class="px-6 py-4">2023-12-01</td>
-                    <td class="px-6 py-4 flex gap-3">
-                        <a href="#" class="text-blue-600 hover:underline">Edit</a>
-                        <a href="#" class="text-red-600 hover:underline">Delete</a>
+                    <td class="px-6 border border-gray-300 py-4">L003</td>
+                    <td class="px-6 border border-gray-300 py-4">Ms. Radhika Mehta</td>
+                    <td class="px-6 border border-gray-300 py-4">radhika.mehta@college.edu</td>
+                    <td class="px-6 border border-gray-300 py-4">+91 9876543212</td>
+                    <td class="px-6 border border-gray-300 py-4">Physics</td>
+                    <td class="px-6 border border-gray-300 py-4 text-red-600">Inactive</td>
+                    <td class="px-6 border border-gray-300 py-4">2023-12-01</td>
+                    <td class="px-6 border border-gray-300 py-4 flex gap-3">
+                        <div class="flex gap-2">
+                            <button class="bg-blue-600 text-white px-6 py-1 rounded hover:bg-blue-700 text-sm">Edit</button>
+                            <button class="bg-red-600 text-white px-3 py-1 rounded hover:bg-red-700 text-sm">Remove</button>
+                        </div>
                     </td>
                 </tr>
             </tbody>

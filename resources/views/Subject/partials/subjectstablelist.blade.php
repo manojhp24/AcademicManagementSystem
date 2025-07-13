@@ -41,58 +41,64 @@
     </div>
 
     <!-- Table Section -->
-    <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
-        <table class="w-full text-sm text-left text-gray-500">
+    <div class="relative overflow-x-auto shadow-md sm:rounded-lg p-4">
+        <table class="data-table subject-table w-full text-sm text-left text-gray-500">
             <thead class="text-xs text-gray-700 uppercase bg-gray-50">
-                <tr>
-                    <th class="px-6 py-3">ID</th>
-                    <th class="px-6 py-3">Subject</th>
-                    <th class="px-6 py-3">Course Code</th>
-                    <th class="px-6 py-3">Faculty</th>
-                    <th class="px-6 py-3">Course</th>
-                    <th class="px-6 py-3">Year</th>
-                    <th class="px-6 py-3">Section</th>
-                    <th class="px-6 py-3">Action</th>
+                <tr class="bg-blue-600 text-white">
+                    <th class="px-6 py-3 border border-gray-300">ID</th>
+                    <th class="px-6 py-3 border border-gray-300">Subject</th>
+                    <th class="px-6 py-3 border border-gray-300">Course Code</th>
+                    <th class="px-6 py-3 border border-gray-300">Faculty</th>
+                    <th class="px-6 py-3 border border-gray-300">Course</th>
+                    <th class="px-6 py-3 border border-gray-300">Year</th>
+                    <th class="px-6 py-3 border border-gray-300">Section</th>
+                    <th class="px-6 py-3 border border-gray-300">Action</th>
                 </tr>
             </thead>
             <tbody>
                 <tr class="bg-white border-b hover:bg-gray-50">
-                    <td class="px-6 py-4">L001</td>
-                    <td class="px-6 py-4">Python</td>
-                    <td class="px-6 py-4">M24MCA202</td>
-                    <td class="px-6 py-4">MHP</td>
-                    <td class="px-6 py-4">MCA</td>
-                    <td class="px-6 py-4">1</td>
-                    <td class="px-6 py-4">A</td>
-                    <td class="px-6 py-4 flex gap-3">
-                        <a href="#" class="text-blue-600 hover:underline">Edit</a>
-                        <a href="#" class="text-red-600 hover:underline">Delete</a>
+                    <td class="px-6 py-4 border border-gray-300">L001</td>
+                    <td class="px-6 py-4 border border-gray-300">Python</td>
+                    <td class="px-6 py-4 border border-gray-300">M24MCA202</td>
+                    <td class="px-6 py-4 border border-gray-300">MHP</td>
+                    <td class="px-6 py-4 border border-gray-300">MCA</td>
+                    <td class="px-6 py-4 border border-gray-300">1</td>
+                    <td class="px-6 py-4 border border-gray-300">A</td>
+                    <td class="px-6 py-4 border border-gray-300 flex gap-3">
+                        <div class="flex gap-2">
+                            <button class="bg-blue-600 text-white px-6 py-1 rounded hover:bg-blue-700 text-sm">Edit</button>
+                            <button class="bg-red-600 text-white px-3 py-1 rounded hover:bg-red-700 text-sm">Remove</button>
+                        </div>
                     </td>
                 </tr>
                 <tr class="bg-white border-b hover:bg-gray-50">
-                    <td class="px-6 py-4">L001</td>
-                    <td class="px-6 py-4">Python</td>
-                    <td class="px-6 py-4">M24MCA202</td>
-                    <td class="px-6 py-4">MHP</td>
-                    <td class="px-6 py-4">MCA</td>
-                    <td class="px-6 py-4">1</td>
-                    <td class="px-6 py-4">B</td>
-                    <td class="px-6 py-4 flex gap-3">
-                        <a href="#" class="text-blue-600 hover:underline">Edit</a>
-                        <a href="#" class="text-red-600 hover:underline">Delete</a>
+                    <td class="px-6 py-4 border border-gray-300">L001</td>
+                    <td class="px-6 py-4 border border-gray-300">Python</td>
+                    <td class="px-6 py-4 border border-gray-300">M24MCA202</td>
+                    <td class="px-6 py-4 border border-gray-300">MHP</td>
+                    <td class="px-6 py-4 border border-gray-300">MCA</td>
+                    <td class="px-6 py-4 border border-gray-300">1</td>
+                    <td class="px-6 py-4 border border-gray-300">B</td>
+                    <td class="px-6 py-4 border border-gray-300 flex gap-3">
+                        <div class="flex gap-2">
+                            <button class="bg-blue-600 text-white px-6 py-1 rounded hover:bg-blue-700 text-sm">Edit</button>
+                            <button class="bg-red-600 text-white px-3 py-1 rounded hover:bg-red-700 text-sm">Remove</button>
+                        </div>
                     </td>
                 </tr>
                 <tr class="bg-white border-b hover:bg-gray-50">
-                    <td class="px-6 py-4">L001</td>
-                    <td class="px-6 py-4">Python</td>
-                    <td class="px-6 py-4">M24MCA202</td>
-                    <td class="px-6 py-4">MHP</td>
-                    <td class="px-6 py-4">MCA</td>
-                    <td class="px-6 py-4">2</td>
-                    <td class="px-6 py-4">A</td>
-                    <td class="px-6 py-4 flex gap-3">
-                        <a href="#" class="text-blue-600 hover:underline">Edit</a>
-                        <a href="#" class="text-red-600 hover:underline">Delete</a>
+                    <td class="px-6 py-4 border border-gray-300">L001</td>
+                    <td class="px-6 py-4 border border-gray-300">Python</td>
+                    <td class="px-6 py-4 border border-gray-300">M24MCA202</td>
+                    <td class="px-6 py-4 border border-gray-300">MHP</td>
+                    <td class="px-6 py-4 border border-gray-300">MCA</td>
+                    <td class="px-6 py-4 border border-gray-300">2</td>
+                    <td class="px-6 py-4 border border-gray-300">A</td>
+                    <td class="px-6 py-4 border border-gray-300 flex gap-3">
+                        <div class="flex gap-2">
+                            <button class="bg-blue-600 text-white px-6 py-1 rounded hover:bg-blue-700 text-sm">Edit</button>
+                            <button class="bg-red-600 text-white px-3 py-1 rounded hover:bg-red-700 text-sm">Remove</button>
+                        </div>
                     </td>
                 </tr>
 

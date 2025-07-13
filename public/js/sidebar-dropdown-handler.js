@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(function(){
     const dropdowns = [
         {
             button: ".dashboard-button",
