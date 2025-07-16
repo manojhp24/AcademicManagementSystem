@@ -8,6 +8,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
     <link rel="stylesheet" href="{{ asset('css/datatables.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/form.css') }}">
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
@@ -103,21 +104,21 @@
         });
     </script>
 
+    <!-- jQuery core -->
     <script src="{{ asset('js/jquery_libreries/jquery.js') }}"></script>
 
-    <!-- Ajax for Reloading -->
-    <script src="{{ asset('js/ajax-scripts.js') }}"></script>
-
-    <!-- Hide and Unhide the Sidebar buttons -->
-    <script src="{{ asset('js/sidebar-dropdown-handler.js') }}"></script>
-
-    <!-- DataTable -->
+    <!-- Plugin libraries -->
     <script src="{{ asset('js/jquery_libreries/datatables.js') }}"></script>
-    <script>
-        $(function() {
-            $(".student-table").DataTable();
-        })
-    </script>
+
+    <!-- Custom JS Modules -->
+    <script src="{{ asset('js/ajax-handler.js') }}"></script>
+    <script src="{{ asset('js/sidebar-dropdown-handler.js') }}"></script>
+    <script src="{{ asset('js/state_dropdown.js') }}"></script>
+    <script src="{{ asset('js/datatable-script.js') }}"></script>
+    <script src="{{ asset('js/doc-toggle.js') }}"></script>
+    <script src="{{ asset('js/app.js') }}"></script>
+
+
 
 
 </body>
