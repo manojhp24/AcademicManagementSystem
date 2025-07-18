@@ -1,0 +1,40 @@
+.toast {
+    width: 18rem;
+    height: 3.5rem;
+    background: #fff;
+    font-weight: 500;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    padding-left: 1rem;
+    font-family: "Lato", sans-serif;
+    border-radius: 0.6rem;
+    position: relative;
+}
+
+.toast i {
+    margin: 0 0.5rem;
+    font-size: 1.5rem;
+    color: green;
+}
+
+.toast::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 5px;
+    background: green;
+    width: 100%;
+    animation: anim 5s linear forwards;
+}
+
+@keyframes anim {
+    0% {
+        width: 100%;
+    }
+
+    100% {
+        width: 0;
+    }
+}

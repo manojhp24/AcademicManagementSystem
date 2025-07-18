@@ -3,12 +3,17 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>@yield('title', 'Admin Dashboard')</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
     <link rel="stylesheet" href="{{ asset('css/datatables.css') }}">
     <link rel="stylesheet" href="{{ asset('css/form.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <link rel="stylesheet" href="{{ asset('css/toast.css') }}">
+
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
@@ -56,7 +61,7 @@
         <div class="flex items-center justify-between bg-white shadow px-6 h-16">
             <!-- Left: App Name -->
             <div class="text-lg sm:text-xl font-bold text-black-600 hidden sm:block">
-                Attendance Admin Panel
+                Admin Panel
             </div>
 
             <!-- Right: User Profile Dropdown -->
@@ -116,7 +121,9 @@
     <script src="{{ asset('js/state_dropdown.js') }}"></script>
     <script src="{{ asset('js/datatable-script.js') }}"></script>
     <script src="{{ asset('js/doc-toggle.js') }}"></script>
+    <script src="{{ asset('js/student-form-handler.js') }}"></script>
     <script src="{{ asset('js/app.js') }}"></script>
+
 
 
 

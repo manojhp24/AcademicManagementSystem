@@ -76,10 +76,7 @@
                     <td class="p-3 border border-gray-300">john@example.com</td>
                     <td class="p-3 border border-gray-300">+91 9876543210</td>
                     <td class="p-3 border border-gray-300">
-                        <div class="flex gap-2">
-                            <button class="bg-blue-600 text-white px-6 py-1 rounded hover:bg-blue-700 text-sm">Edit</button>
-                            <button class="bg-red-600 text-white px-3 py-1 rounded hover:bg-red-700 text-sm">Remove</button>
-                        </div>
+                        <a href="" class=" text-blue-700 hover:underline">View Details</a>
                     </td>
                 </tr>
                 <tr class="bg-white border border-gray-300 hover:bg-gray-50">
@@ -91,10 +88,8 @@
                     <td class="p-3 border border-gray-300">john@example.com</td>
                     <td class="p-3 border border-gray-300">+91 9876543210</td>
                     <td class="p-3 border border-gray-300">
-                        <div class="flex gap-2">
-                            <button class="bg-blue-600 text-white px-6 py-1 rounded hover:bg-blue-700 text-sm">Edit</button>
-                            <button class="bg-red-600 text-white px-3 py-1 rounded hover:bg-red-700 text-sm">Remove</button>
-                        </div>
+                        <a href="" class=" text-blue-700 hover:underline">View Details</a>
+
                     </td>
                 </tr>
                 <tr class="bg-white border border-gray-300 hover:bg-gray-50">
@@ -106,10 +101,7 @@
                     <td class="p-3 border border-gray-300">john@example.com</td>
                     <td class="p-3 border border-gray-300">+91 9876543210</td>
                     <td class="p-3 border border-gray-300">
-                        <div class="flex gap-2">
-                            <button class="bg-blue-600 text-white px-6 py-1 rounded hover:bg-blue-700 text-sm">Edit</button>
-                            <button class="bg-red-600 text-white px-3 py-1 rounded hover:bg-red-700 text-sm">Remove</button>
-                        </div>
+                        <a href="" class=" text-blue-700 hover:underline">View Details</a>
                     </td>
                 </tr>
 

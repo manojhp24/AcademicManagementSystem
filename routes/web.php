@@ -6,6 +6,7 @@ use App\Http\Controllers\StudentController;
 use App\Http\Controllers\LecturersController;
 use App\Http\Controllers\ClassController;
 use App\Http\Controllers\SubjectController;
+use App\Models\Student;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,6 +28,7 @@ Route::get('/admin-dashboard', [AdminController::class, 'index'])->name('admin.d
 Route::prefix('students')->group(function () {
     Route::get('/create', [StudentController::class, 'create'])->name('students.addstudents');
     Route::get('/view', [StudentController::class, 'view'])->name('students.view');
+    Route::post('/add',[StudentController::class, 'store'])->name('students.store');
 });
 
 // Lecturers Management Routes

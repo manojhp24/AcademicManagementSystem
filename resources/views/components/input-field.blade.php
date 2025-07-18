@@ -10,5 +10,6 @@
         id="{{ $name }}"
         value="{{ old($name, $value) }}"
         class="input-field"
-        placeholder="{{ $placeholder }}" />
+        placeholder="{{ $placeholder }}" 
+        required/>
 </div>

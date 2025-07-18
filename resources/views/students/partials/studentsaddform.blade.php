@@ -9,10 +9,14 @@
         </p>
     </div>
 
+    <div id="toast-box"></div>
 
-    <form class="space-y-8">
+
+
+    <form class="space-y-8" action="{{ route('students.store') }}" method="POST" id="student-form" data-url="{{ route('students.store') }}">
+        @csrf
         <!-- Basic Information Section -->
-        <div class="section-card rounded-lg overflow-hidden">
+        <div class=" section-card rounded-lg overflow-hidden">
             <div class="section-header">
                 <i class="fas fa-user"></i>
                 <span>Basic Information</span>
@@ -45,16 +49,22 @@
                         label="Phone Number"
                         placeholder="Enter Phone Number"
                         type="number" />
+                    <x-input-field
+                        name="alternative_phone_number"
+                        label="Alternative Phone Number"
+                        placeholder="Enter Alternative Phone Number"
+                        type="number" />
 
                     <x-input-field
                         name="email"
                         label="Email"
                         placeholder="Enter Email Address"
                         type="email" />
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-2">Permanent Address</label>
-                        <textarea name="permanent_address" class="input-field" rows="3" placeholder="Enter permanent address"></textarea>
-                    </div>
+
+                </div>
+                <div class="mt-4">
+                    <label class="block  text-sm font-medium text-gray-700 mb-2">Permanent Address</label>
+                    <textarea name="permanent_address" class="input-field" rows="3" placeholder="Enter permanent address"></textarea>
                 </div>
             </div>
         </div>
@@ -68,52 +78,18 @@
             <div class="p-6">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-2">Course</label>
-                        <select name="class" class="input-field">
-                            <option value="">Select Course</option>
-                            <option value="MCA">MCA</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-2">Year</label>
-                        <select name="year" class="input-field">
-                            <option value="">Select Year</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-2">Section</label>
-                        <select name="section" class="input-field">
-                            <option value="">Select Section</option>
-                            <option value="A">A</option>
-                            <option value="B">B</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-2">Graduation Background</label>
-                        <input type="text" name="graduation_background" class="input-field" placeholder="Enter graduation background" />
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Graduation</label>
+                        <input type="text" name="graduation_background" class="input-field" placeholder="Enter graduation " />
                     </div>
                     <div>
                         <label class="block text-sm font-medium text-gray-700 mb-2">Languages Known</label>
-                        <input type="text" name="languages_known" class="input-field" placeholder="Enter languages known" />
+                        <select name="language" id="laguagesknownDropdown" class="mt-1 block w-full rounded-md border border-gray-300 p-2">
+                            <option value="">Select Language</option>
+                            <option value="kannada">Kannada</option>
+                            <option value="English">English</option>
+                            <option value="Hindi">Hindi</option>
+                        </select>
                     </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-2">Project Title & Company</label>
-                        <input type="text" name="project_details" class="input-field" placeholder="Enter project details" />
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Academic Scores Section -->
-        <div class="section-card rounded-lg overflow-hidden">
-            <div class="section-header">
-                <i class="fas fa-chart-line"></i>
-                <span>Academic Scores</span>
-            </div>
-            <div class="p-6">
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <div>
                         <label class="block text-sm font-medium text-gray-700 mb-2">SSC %</label>
                         <input type="number" name="ssc_percent" class="input-field" placeholder="SSC percentage" />
@@ -139,16 +115,12 @@
             <div class="p-6">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-2">College Fees</label>
-                        <input type="number" name="college_fees" class="input-field" placeholder="College fees amount" />
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Actual Fees</label>
+                        <input type="number" name="actual_fees" class="input-field" placeholder="Actual fees amount" />
                     </div>
                     <div>
                         <label class="block text-sm font-medium text-gray-700 mb-2">Discount</label>
                         <input type="number" name="discount" class="input-field" placeholder="Discount amount" />
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-2">Actual Fees</label>
-                        <input type="number" name="actual_fees" class="input-field" placeholder="Actual fees amount" />
                     </div>
                     <div>
                         <label class="block text-sm font-medium text-gray-700 mb-2">Registration Fees</label>
@@ -162,12 +134,12 @@
                         </select>
                     </div>
                     <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-2">Exam Fees</label>
-                        <input type="number" name="exam" class="input-field" placeholder="Exam fees" />
-                    </div>
-                    <div class="md:col-span-2">
-                        <label class="block text-sm font-medium text-gray-700 mb-2">Bank Name</label>
-                        <input type="text" name="bank_name" class="input-field" placeholder="Bank name for transactions" />
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Exam</label>
+                        <select name="Exam" id="ExamDropdown" class="mt-1 block w-full rounded-md border border-gray-300 p-2">
+                            <option value="Hostel">AFMI</option>
+                            <option value="PG">MCAER</option>
+                            <option value="PG">CMAT</option>
+                        </select>
                     </div>
                 </div>
             </div>
@@ -181,58 +153,72 @@
             </div>
             <div class="p-6">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <!-- 10th Marksheet -->
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
-                        <div class="checkbox-container ">
-                            <input type="checkbox" name="doc_10th" id="doc_10th" class="doc-toggle" data-target="#doc_10th_input" />
+                        <div class="checkbox-container">
+                            <input type="hidden" name="doc_10th" value="0">
+                            <input type="checkbox" name="doc_10th" id="doc_10th" class="doc-toggle" value="1" data-target="#doc_10th_input" />
                             <label for="doc_10th" class="text-sm font-medium text-gray-700">10th Marksheet</label>
                         </div>
                         <div id="doc_10th_input" class="hidden">
-                            <input type="text" id="10th_ms" name="doc_10th_input_value" class="form-input block w-full rounded-md border border-gray-300 p-2.5" placeholder="Enter 10th Marksheet Number" />
+                            <input type="text" id="10th_ms" name="doc_10th_registerNumber" class="form-input block w-full rounded-md border border-gray-300 p-2.5" placeholder="10th Marksheet Number" />
                         </div>
                     </div>
+
+                    <!-- 12th Marksheet -->
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
                         <div class="checkbox-container">
-                            <input type="checkbox" name="doc_12th" id="doc_12th" class="doc-toggle" data-target="#12th_marksheet_number" />
+                            <input type="hidden" name="doc_12th" value="0">
+                            <input type="checkbox" name="doc_12th" id="doc_12th" class="doc-toggle" value="1" data-target="#12th_marksheet_number" />
                             <label for="doc_12th" class="text-sm font-medium text-gray-700">12th Marksheet</label>
                         </div>
                         <div id="12th_marksheet_number" class="hidden">
-                            <input type="text" name="12th_marksheet_number" class="block w-full rounded-md border border-gray-300 p-2.5" placeholder="Enter 12th Marksheet Number" />
+                            <input type="text" name="doc_12th_registerNumber" class="block w-full rounded-md border border-gray-300 p-2.5" placeholder="12th Marksheet Number" />
                         </div>
                     </div>
+
+                    <!-- Degree/PDC -->
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
                         <div class="checkbox-container">
-                            <input type="checkbox" name="doc_degree" id="doc_degree" class="doc-toggle" data-target="#degree_marksheet_number" />
+                            <input type="hidden" name="doc_degree" value="0">
+                            <input type="checkbox" name="doc_degree" id="doc_degree" class="doc-toggle" value="1" data-target="#degree_marksheet_number" />
                             <label for="doc_degree" class="text-sm font-medium text-gray-700">Degree/PDC</label>
                         </div>
                         <div id="degree_marksheet_number" class="hidden">
-                            <input type="text" name="degree_marksheet_number" class="block w-full rounded-md border border-gray-300 p-2.5" placeholder="Enter Degree Marksheet Number">
+                            <input type="text" name="degree_marksheet_number" class="block w-full rounded-md border border-gray-300 p-2.5" placeholder="Degree Marksheet Number">
                         </div>
-
                     </div>
+
+                    <!-- Migration/TC -->
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
                         <div class="checkbox-container">
-                            <input type="checkbox" name="doc_migration" id="doc_migration" class="doc-toggle" data-target="#migration_certificate_number" />
+                            <input type="hidden" name="doc_migration" value="0">
+                            <input type="checkbox" name="doc_migration" id="doc_migration" class="doc-toggle" value="1" data-target="#migration_certificate_number" />
                             <label for="doc_migration" class="text-sm font-medium text-gray-700">Migration/TC</label>
                         </div>
                         <div id="migration_certificate_number" class="hidden">
-                            <input type="text" name="migration_certificate_number" class="block w-full rounded-md border border-gray-300 p-2.5" placeholder="Enter Migration Certificate Number">
+                            <input type="text" name="migration_certificate_number" class="block w-full rounded-md border border-gray-300 p-2.5" placeholder="Migration Certificate Number">
                         </div>
                     </div>
+
+                    <!-- Caste Certificate -->
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
                         <div class="checkbox-container">
-                            <input type="checkbox" name="doc_caste" id="doc_caste" class="doc-toggle" data-target="#caste_certificate_number" />
+                            <input type="hidden" name="doc_caste" value="0">
+                            <input type="checkbox" name="doc_caste" id="doc_caste" class="doc-toggle" value="1" data-target="#caste_certificate_number" />
                             <label for="doc_caste" class="text-sm font-medium text-gray-700">Caste Certificate</label>
                         </div>
                         <div id="caste_certificate_number" class="hidden">
-                            <input type="text" name="caste_certificate_number" class="block w-full rounded-md border border-gray-300 p-2.5" placeholder="Enter Caste-Certificate Number">
+                            <input type="text" name="caste_certificate_number" class="block w-full rounded-md border border-gray-300 p-2.5" placeholder="Caste-Certificate Number">
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
+
         <!-- Professional Status Section -->
-        <div class="section-card rounded-lg overflow-hidden">
+        <!-- <div class="section-card rounded-lg overflow-hidden">
             <div class="section-header">
                 <i class="fas fa-briefcase"></i>
                 <span>Professional Status & Placement</span>
@@ -276,7 +262,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
 
         <!-- Action Buttons -->
         <div class="form-container rounded-lg p-6">
