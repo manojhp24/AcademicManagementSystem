@@ -17,15 +17,3 @@ const CheckboxToggleHandler = {
     },
 };
 
-// function handleCheckboxToggles() {
-//     $(document)
-//         .off("change", ".doc-toggle")
-//         .on("change", ".doc-toggle", function () {
-//             const targetId = `#${$(this).attr("id")}_input`;
-//             if ($(this).is(":checked")) {
-//                 $(targetId).removeClass("hidden");
-//             } else {
-//                 $(targetId).addClass("hidden");
-//             }
-//         });
-// }

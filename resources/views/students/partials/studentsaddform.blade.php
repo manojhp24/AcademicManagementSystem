@@ -48,7 +48,9 @@
                         name="phone_number"
                         label="Phone Number"
                         placeholder="Enter Phone Number"
-                        type="number" />
+                        type="number"
+                        minlength="10" 
+                        maxlength="10" />
                     <x-input-field
                         name="alternative_phone_number"
                         label="Alternative Phone Number"
@@ -217,52 +219,6 @@
         </div>
 
 
-        <!-- Professional Status Section -->
-        <!-- <div class="section-card rounded-lg overflow-hidden">
-            <div class="section-header">
-                <i class="fas fa-briefcase"></i>
-                <span>Professional Status & Placement</span>
-            </div>
-            <div class="p-6">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-2">Professional Status</label>
-                        <input type="text" name="professional_status" class="input-field" placeholder="Current professional status" />
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-2">Extra Curriculum</label>
-                        <input type="text" name="extra_curriculum" class="input-field" placeholder="Extra curricular activities" />
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-2">Companies Interviewed</label>
-                        <input type="text" name="companies_interviewed" class="input-field" placeholder="Companies interviewed with" />
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-2">Interview Date</label>
-                        <input type="date" name="interview_date" class="input-field" />
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-2">Eligible</label>
-                        <select name="eligible" class="input-field">
-                            <option value="Yes">Yes</option>
-                            <option value="No">No</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-2">Interview Status</label>
-                        <input type="text" name="interview_status" class="input-field" placeholder="Interview status" />
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-2">Result</label>
-                        <input type="text" name="interview_result" class="input-field" placeholder="Interview result" />
-                    </div>
-                    <div class="checkbox-container">
-                        <input type="checkbox" name="cv_submitted" id="cv_submitted" />
-                        <label for="cv_submitted" class="text-sm font-medium text-gray-700">CV Submitted</label>
-                    </div>
-                </div>
-            </div>
-        </div> -->
 
         <!-- Action Buttons -->
         <div class="form-container rounded-lg p-6">

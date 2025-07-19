@@ -15,7 +15,7 @@
         }
         
         .section-header {
-            background: linear-gradient(135deg, #3b82f6 0%, #1e40af 50%, #1e3a8a 100%);
+            background: #3b82f6;
             color: white;
             padding: 1rem;
             font-weight: 600;

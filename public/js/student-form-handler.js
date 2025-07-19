@@ -27,7 +27,6 @@ const StudentFormHandler = {
                      true
                  );
                 StudentFormHandler.resetForm();
-                window.scrollTo({ top: 0, behavior: "smooth" });
             },
         });
     },
@@ -39,13 +38,15 @@ const StudentFormHandler = {
     resetForm: function () {
         const form = $("#student-form")[0];
         form.reset();
-        $('#student-form input[type="checkbox"]').prop("checked", false);
+        $('#student-form input[type="checkbox"]').each(function(){
+            $(this).prop("checked",false).trigger("change")
+        })
     },
 
     showToast: function (message = "Success", isSuccess = true) {
         const toast = document.createElement("div");
         toast.className = "toast";
-        toast.style.backgroundColor = isSuccess ? "#fff" : "#e53e3e"; // green or red
+        toast.style.backgroundColor = isSuccess ? "#fff" : "#e53e3e"; 
         toast.innerHTML = `<i class="fa-solid fa-circle-${
             isSuccess ? "check" : "xmark"
         }"></i> ${message}`;

@@ -6,41 +6,13 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>@yield('title', 'Admin Dashboard')</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
     <link rel="stylesheet" href="{{ asset('css/datatables.css') }}">
     <link rel="stylesheet" href="{{ asset('css/form.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
     <link rel="stylesheet" href="{{ asset('css/toast.css') }}">
-
-
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-
-        .loader {
-            width: 50px;
-            aspect-ratio: 1;
-            --_c: no-repeat radial-gradient(farthest-side, #2563eb 92%, #0000);
-            background:
-                var(--_c) top,
-                var(--_c) left,
-                var(--_c) right,
-                var(--_c) bottom;
-            background-size: 12px 12px;
-            animation: l7 1s infinite;
-            margin: 0 auto;
-        }
-
-        @keyframes l7 {
-            to {
-                transform: rotate(.5turn);
-            }
-        }
-    </style>
-
-
-
+    <link rel="stylesheet" href="{{ asset('css/loader.css') }}">
+    @vite('resources/css/app.css')
 </head>
 
 <body class="bg-gray-100 font-sans">
@@ -69,7 +41,7 @@
                 <button id="userDropdownButton" data-dropdown-toggle="userDropdown"
                     class="flex items-center space-x-2 focus:outline-none">
                     <img src="https://randomuser.me/api/portraits/men/1.jpg" class="w-8 h-8 rounded-full" alt="User" />
-                    <span class="font-semibold text-sm hidden sm:block">Tom Cook</span>
+                    <span class="font-semibold text-sm hidden sm:block">admin@gmail.com</span>
                 </button>
 
                 <!-- Dropdown Menu -->
