@@ -27,6 +27,7 @@ const StudentFormHandler = {
                      true
                  );
                 StudentFormHandler.resetForm();
+                window.scrollTo({ top: 0, behavior: "smooth" });
             },
         });
     },

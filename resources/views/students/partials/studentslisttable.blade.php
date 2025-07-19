@@ -10,45 +10,7 @@
 
 
     <!-- Filter + Search Bar -->
-    <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4">
-        <!-- Filters -->
-        <div class="flex flex-col sm:flex-row flex-wrap gap-4">
-            <div>
-                <label for="course" class="block mb-1 text-sm font-medium text-gray-700">Course</label>
-                <select id="course" name="course" class="w-36 p-2 border border-gray-300 rounded-md text-sm focus:ring-blue-500 focus:border-blue-500">
-                    <option selected disabled>Choose</option>
-                    <option>MCA</option>
-                    <option>MBA</option>
-                </select>
-            </div>
-            <div>
-                <label for="year" class="block mb-1 text-sm font-medium text-gray-700">Year</label>
-                <select id="year" name="year" class="w-36 p-2 border border-gray-300 rounded-md text-sm focus:ring-blue-500 focus:border-blue-500">
-                    <option selected disabled>Choose</option>
-                    <option>1st Year</option>
-                    <option>2nd Year</option>
-                </select>
-            </div>
-            <div>
-                <label for="section" class="block mb-1 text-sm font-medium text-gray-700">Section</label>
-                <select id="section" name="section" class="w-36 p-2 border border-gray-300 rounded-md text-sm focus:ring-blue-500 focus:border-blue-500">
-                    <option selected disabled>Choose</option>
-                    <option>A</option>
-                    <option>B</option>
-                </select>
-            </div>
-        </div>
-
-        <!-- Search -->
-        <!-- <div class="relative w-full sm:w-72">
-            <input type="search" placeholder="Search by name or ID" class="w-full p-2.5 pl-10 text-sm border border-gray-300 rounded-md bg-gray-50 focus:ring-blue-500 focus:border-blue-500" />
-            <div class="absolute inset-y-0 left-3 flex items-center pointer-events-none">
-                <svg class="w-4 h-4 text-gray-500" fill="none" viewBox="0 0 20 20" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
-                </svg>
-            </div>
-        </div> -->
-    </div>
+    
 
     <!-- Student Table -->
     <div class="overflow-x-auto shadow rounded-lg p-4">
@@ -56,56 +18,28 @@
             <thead class="bg-gray-100 text-xs uppercase">
                 <tr class="bg-blue-600 text-center text-white">
                     <th class="p-3 border border-gray-300">ID</th>
-                    <th class="p-3 border border-gray-300">Full Name</th>
-                    <th class="p-3 border border-gray-300">Course</th>
-                    <th class="p-3 border border-gray-300">Year</th>
-                    <th class="p-3 border border-gray-300">Section</th>
-                    <th class="p-3 border border-gray-300">Email</th>
-                    <th class="p-3 border border-gray-300">Phone</th>
+                    <th class="p-3 border border-gray-300">Student Name</th>
+                    <th class="p-3 border border-gray-300">Roll Number</th>
+                    <th class="p-3 border border-gray-300">Mobile</th>
+                    <th class="p-3 border border-gray-300">Place</th>
+                    <th class="p-3 border border-gray-300">State</th>
+                    <th class="p-3 border border-gray-300">email</th>
                     <th class="p-3 border border-gray-300">Actions</th>
                 </tr>
             </thead>
             <tbody>
-                <!-- Example Row -->
+                @foreach($studentData as $student)
                 <tr class="bg-white border border-gray-300 hover:bg-gray-50">
-                    <td class="p-3 border border-gray-300 font-medium text-gray-900">MCA001</td>
-                    <td class="p-3 border border-gray-300">John Doe</td>
-                    <td class="p-3 border border-gray-300">MCA</td>
-                    <td class="p-3 border border-gray-300">1st Year</td>
-                    <td class="p-3 border border-gray-300">A</td>
-                    <td class="p-3 border border-gray-300">john@example.com</td>
-                    <td class="p-3 border border-gray-300">+91 9876543210</td>
-                    <td class="p-3 border border-gray-300">
-                        <a href="" class=" text-blue-700 hover:underline">View Details</a>
-                    </td>
+                    <td class="p-3 border border-gray-300 font-medium text-gray-900">{{$student->id}}</td>
+                    <td class="p-3 border border-gray-300 ">{{$student->student_name}}</td>
+                    <td class="p-3 border border-gray-300 ">{{$student->roll_number}}</td>
+                    <td class="p-3 border border-gray-300 ">{{$student->phone_number}}</td>
+                    <td class="p-3 border border-gray-300 ">{{$student->place}}</td>
+                    <td class="p-3 border border-gray-300 ">{{$student->state}}</td>
+                    <td class="p-3 border border-gray-300 ">{{$student->email}}</td>
+                    <td class="p-3 border border-gray-300 "><a href="" class="underline text-blue-500">View Details</a></td>
                 </tr>
-                <tr class="bg-white border border-gray-300 hover:bg-gray-50">
-                    <td class="p-3 border border-gray-300 font-medium text-gray-900">MCA001</td>
-                    <td class="p-3 border border-gray-300">John Doe</td>
-                    <td class="p-3 border border-gray-300">MCA</td>
-                    <td class="p-3 border border-gray-300">1st Year</td>
-                    <td class="p-3 border border-gray-300">A</td>
-                    <td class="p-3 border border-gray-300">john@example.com</td>
-                    <td class="p-3 border border-gray-300">+91 9876543210</td>
-                    <td class="p-3 border border-gray-300">
-                        <a href="" class=" text-blue-700 hover:underline">View Details</a>
-
-                    </td>
-                </tr>
-                <tr class="bg-white border border-gray-300 hover:bg-gray-50">
-                    <td class="p-3 border border-gray-300 font-medium text-gray-900">MCA001</td>
-                    <td class="p-3 border border-gray-300">John Doe</td>
-                    <td class="p-3 border border-gray-300">MCA</td>
-                    <td class="p-3 border border-gray-300">1st Year</td>
-                    <td class="p-3 border border-gray-300">A</td>
-                    <td class="p-3 border border-gray-300">john@example.com</td>
-                    <td class="p-3 border border-gray-300">+91 9876543210</td>
-                    <td class="p-3 border border-gray-300">
-                        <a href="" class=" text-blue-700 hover:underline">View Details</a>
-                    </td>
-                </tr>
-
-                <!-- Repeat more rows -->
+                @endforeach
             </tbody>
         </table>
     </div>

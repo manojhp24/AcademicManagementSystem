@@ -22,7 +22,5 @@
         placeholder="{{ $placeholder }}"
         @if($minlength) minlength="{{ $minlength }}" @endif
         @if($maxlength) maxlength="{{ $maxlength }}" @endif
-        pattern="\d{10}"
-
         required />
 </div>

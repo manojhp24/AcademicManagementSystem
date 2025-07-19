@@ -26,7 +26,7 @@ class Student extends Model
         return $this->hasOne(Fee::class);
     }
 
-    public function documet(){
+    public function document(){
         return $this->hasOne(Document::class);
     }
 }

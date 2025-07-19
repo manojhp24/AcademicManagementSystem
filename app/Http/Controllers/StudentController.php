@@ -21,11 +21,13 @@ class StudentController extends Controller
 
     public function view()
     {
+        $studentData = Student::with('acdemicDetail','fee','document')->get();
+
         if (request()->ajax()) {
-            return view('students.partials.studentslisttable');
+            return view('students.partials.studentslisttable',compact('studentData'));
         }
 
-        return view('students.viewstudents');
+        return view('students.viewstudents',compact('studentData'));
     }
 
     public function store(Request $request)
