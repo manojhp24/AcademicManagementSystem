@@ -8,8 +8,8 @@ $(function(){
             target: "#students-dropdown",
         },
         {
-            button: ".faculty-button",
-            target: "#lecture-dropdown",
+            button: ".subjects-button",
+            target: "#subjects-dropdown",
         },
         {
             button: ".class-button",

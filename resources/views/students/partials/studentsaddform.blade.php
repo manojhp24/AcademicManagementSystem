@@ -1,25 +1,43 @@
 <div class="w-full mx-auto">
     <!-- Header -->
-    <div class="mb-6 border-l-8 border-blue-700 pl-4">
-        <h1 class="text-3xl md:text-4xl font-bold text-gray-800">
-            Add Student
-        </h1>
-        <p class="text-sm md:text-base text-gray-500 mt-1">
-            Add New student records from this dashboard.
-        </p>
+
+    <div class="mb-4 text-sm text-gray-600">
+        <a href="{{ route('admin.dashboard') }}" class="text-blue-600 hover:underline ajax-link">Dashboard</a>
+        <span class="mx-1">/</span>
+        <span class="text-gray-700">Add Student</span>
     </div>
 
-    <div id="toast-box"></div>
+    <div class="w-full  space-y-6">
+        <div class="rounded-md bg-white p-4  border-l-4 border-l-blue-700 shadow-md">
+            <div class="flex justify-between  items-center">
+                <div>
+                    <h1 class="text-3xl md:text-4xl font-bold text-gray-800">
+                        Add Student
+                    </h1>
+                    <p class="text-sm md:text-base text-gray-500 mt-1">
+                        Add New student records from this dashboard.
+                    </p>
+                </div>
+
+                <a href="/students/view" class="text-blue-600 hover:underline font-semibold ajax-link">
+                    <button class="bg-blue-700 p-3 text-white rounded-md hover:bg-blue-600 cursor-pointer">View Students</button>
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+
 
 
 
     <form class="space-y-8" action="{{ route('students.store') }}" method="POST" id="student-form" data-url="{{ route('students.store') }}">
         @csrf
         <!-- Basic Information Section -->
-        <div class=" section-card rounded-lg overflow-hidden">
+        <div class=" section-card rounded-lg overflow-hidden mt-5">
             <div class="section-header">
                 <i class="fas fa-user"></i>
-                <span>Basic Information</span>
+                <span>Personal Information</span>
             </div>
             <div class="p-6">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -49,7 +67,7 @@
                         label="Phone Number"
                         placeholder="Enter Phone Number"
                         type="number"
-                        minlength="10" 
+                        minlength="10"
                         maxlength="10" />
                     <x-input-field
                         name="alternative_phone_number"
@@ -234,4 +252,5 @@
             </div>
         </div>
     </form>
+    <div id="toast-box"></div>
 </div>

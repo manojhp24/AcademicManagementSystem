@@ -4,7 +4,6 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\LecturersController;
-use App\Http\Controllers\ClassController;
 use App\Http\Controllers\SubjectController;
 use App\Models\Student;
 
@@ -29,6 +28,7 @@ Route::prefix('students')->group(function () {
     Route::get('/create', [StudentController::class, 'create'])->name('students.addstudents');
     Route::get('/view', [StudentController::class, 'view'])->name('students.view');
     Route::post('/add',[StudentController::class, 'store'])->name('students.store');
+    Route::get('/studentdetail/{id}',[StudentController::class,'show'])->name('students.details');
 });
 
 // Lecturers Management Routes
@@ -40,14 +40,7 @@ Route::prefix('lecturers')->group(
     }
 );
 
-// Class Management Routes
 
-Route::prefix('classes')->group(
-    function () {
-        Route::get('/addclass', [ClassController::class, 'create'])->name('class.addclass');
-        Route::get('/viewclass', [ClassController::class, 'view'])->name('class.viewclass');
-    }
-);
 
 //Subjects Management Routes
 
@@ -55,5 +48,6 @@ Route::prefix('subjects')->group(
     function () {
         Route::get('/addsubjects', [SubjectController::class, 'create'])->name('subject.addsubjects');
         Route::get('/viewsubjects', [SubjectController::class, 'view'])->name('subject.viewsubjects');
+        Route::post('/store',[SubjectController::class,'store'])->name('subject.store');
     }
 );

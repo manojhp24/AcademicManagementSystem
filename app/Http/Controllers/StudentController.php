@@ -30,6 +30,20 @@ class StudentController extends Controller
         return view('students.viewstudents',compact('studentData'));
     }
 
+    
+
+    public function show($id){
+
+        $student = Student::with(['acdemicDetail', 'fee', 'document'])->findOrFail($id);
+
+        if(request()->ajax())
+            return view('students.partials.studentdetails',compact('student'));
+
+        return view('students.details',compact('student'));
+    }
+
+
+
     public function store(Request $request)
     {
 

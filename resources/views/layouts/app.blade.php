@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="{{ asset('css/toast.css') }}">
     <link rel="stylesheet" href="{{ asset('css/loader.css') }}">
     @vite('resources/css/app.css')
+    
 </head>
 
 <body class="bg-gray-100 font-sans">
@@ -94,6 +95,7 @@
     <script src="{{ asset('js/datatable-script.js') }}"></script>
     <script src="{{ asset('js/doc-toggle.js') }}"></script>
     <script src="{{ asset('js/student-form-handler.js') }}"></script>
+    <script src="{{ asset('js/course-form-handler.js')}}"></script>
     <script src="{{ asset('js/app.js') }}"></script>
 
 

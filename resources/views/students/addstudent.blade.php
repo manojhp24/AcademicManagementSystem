@@ -1,6 +1,19 @@
-@extends('admin.dashboard')
+<!DOCTYPE html>
+<html lang="en">
 
-@section('content')
-@include('students.partials.studentsaddform')
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Student</title>
+</head>
 
-@endsection
+<body>
+    @extends('admin.dashboard')
+
+    @section('content')
+    @include('students.partials.studentsaddform')
+
+    @endsection
+</body>
+
+</html>
