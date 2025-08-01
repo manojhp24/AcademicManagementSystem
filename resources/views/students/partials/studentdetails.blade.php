@@ -1,4 +1,4 @@
-<div class="container student-detail-container m-4">
+<div class="student-detail-container m-4">
     <div class="mb-4 text-sm text-gray-600">
         <a href="{{ route('admin.dashboard') }}" class="text-blue-600 hover:underline ajax-link">Dashboard</a>
         <span class="mx-1">/</span>

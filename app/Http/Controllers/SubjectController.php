@@ -18,12 +18,16 @@ class SubjectController extends Controller
     }
 
     public function view(){
+
+        $courseData = Course::all();
         
         if (request()->ajax()) {
-            return view('subject.partials.subjectstablelist');
+            return view('subject.partials.subjectstablelist',compact("courseData"));
         }
-        return view('subject.viewsubjects');
+        return view('subject.viewsubjects',compact('courseData'));
     }
+
+
 
     public function store(Request $request){
         

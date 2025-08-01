@@ -66,11 +66,11 @@ const CourseFormHandler = {
 
         setTimeout(() => {
             toast.remove();
-        }, 4000);
+        }, 5000);
     },
 
     resetForm : function(){
-        const courseForm = $("#course-form");
+        const courseForm = $("#course-form")[0];
         courseForm.reset();
     }
 };

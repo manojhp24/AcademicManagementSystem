@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="{{ asset('css/toast.css') }}">
     <link rel="stylesheet" href="{{ asset('css/loader.css') }}">
     @vite('resources/css/app.css')
-    
+
 </head>
 
 <body class="bg-gray-100 font-sans">
@@ -87,6 +87,8 @@
 
     <!-- Plugin libraries -->
     <script src="{{ asset('js/jquery_libreries/datatables.js') }}"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs" defer></script>
 
     <!-- Custom JS Modules -->
     <script src="{{ asset('js/ajax-handler.js') }}"></script>

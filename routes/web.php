@@ -5,6 +5,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\LecturersController;
 use App\Http\Controllers\SubjectController;
+use App\Http\Controllers\MarksController;
 use App\Models\Student;
 
 /*
@@ -49,5 +50,11 @@ Route::prefix('subjects')->group(
         Route::get('/addsubjects', [SubjectController::class, 'create'])->name('subject.addsubjects');
         Route::get('/viewsubjects', [SubjectController::class, 'view'])->name('subject.viewsubjects');
         Route::post('/store',[SubjectController::class,'store'])->name('subject.store');
+    }
+);
+
+Route::prefix('marks')->group(
+    function(){
+        Route::get('/entrymarks',[MarksController::class,'entry_marks'])->name('marks_entry.entrymarks');
     }
 );

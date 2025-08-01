@@ -95,7 +95,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="ajax-link flex items-center gap-2 py-1 hover:bg-blue-500 rounded px-2">
+                    <a href="{{ route('subject.viewsubjects') }}" class="ajax-link flex items-center gap-2 py-1 hover:bg-blue-500 rounded px-2">
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 16 16">
                             <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0" />
                             <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8m8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7" />
@@ -105,6 +105,43 @@
                     </a>
                 </li>
             </ul>
+
+            <button type="button"
+                class="marks-entry-button flex items-center justify-between w-full px-4 py-2 mb-2 hover:bg-blue-500 rounded-lg"
+                data-collapse-toggle="marks-dropdown"
+                aria-controls="marks-dropdown"
+                aria-expanded="false">
+                <span class="flex items-center">
+                    <i class="fa-solid fa-file" style="color: #ffffff;"></i>
+                </span> <span class="ms-3 text-gray-800 dark:text-gray-100">Marks</span>
+                <svg class="w-4 h-4 ml-auto" fill="none" stroke="currentColor" stroke-width="2"
+                    viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                </svg>
+            </button>
+            <ul id="marks-dropdown" class="hidden space-y-1 ml-6">
+                <li>
+                    <a href="{{ route('marks_entry.entrymarks') }}" class="ajax-link flex items-center gap-2 py-1 hover:bg-blue-500 rounded px-2">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#000000" stroke="#000000" class="w-5 h-5">
+                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                            <g id="SVGRepo_iconCarrier">
+                                <title></title>
+                                <g id="Complete">
+                                    <g data-name="add" id="add-2">
+                                        <g>
+                                            <line fill="none" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" x1="12" x2="12" y1="19" y2="5"></line>
+                                            <line fill="none" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" x1="5" x2="19" y1="12" y2="12"></line>
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
+                        </svg>
+                        Entry Marks
+                    </a>
+                </li>
+            </ul>
+
 
         </nav>
     </div>

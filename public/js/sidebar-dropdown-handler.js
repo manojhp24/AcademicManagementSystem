@@ -12,8 +12,8 @@ $(function(){
             target: "#subjects-dropdown",
         },
         {
-            button: ".class-button",
-            target: "#class-dropdown",
+            button: ".marks-entry-button",
+            target: "#marks-dropdown",
         },
         {
             button: ".subject-button",

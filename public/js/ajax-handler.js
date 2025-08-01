@@ -31,18 +31,18 @@ const AjaxHandler = {
                     window.history.pushState({}, "", url);
                 }
 
-                if (typeof DropdownLoader !== "undefined")
-                    DropdownLoader.init();
-                if (typeof DataTableLoader !== "undefined")
-                    DataTableLoader.init();
-                if (typeof CheckboxToggleHandler !== "undefined")
-                    CheckboxToggleHandler.init();
-                if (
-                    $("#student-form").length &&
-                    typeof StudentFormHandler !== "undefined"
-                ) {
-                    StudentFormHandler.init();
-                }
+                // if (typeof DropdownLoader !== "undefined")
+                //     DropdownLoader.init();
+                // if (typeof DataTableLoader !== "undefined")
+                //     DataTableLoader.init();
+                // if (typeof CheckboxToggleHandler !== "undefined")
+                //     CheckboxToggleHandler.init();
+                // if (
+                //     $("#student-form").length &&
+                //     typeof StudentFormHandler !== "undefined"
+                // ) {
+                //     StudentFormHandler.init();
+                // }
             },
             error: function () {
                 $("#main-content").html(
