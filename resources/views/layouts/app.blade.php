@@ -88,8 +88,6 @@
     <!-- Plugin libraries -->
     <script src="{{ asset('js/jquery_libreries/datatables.js') }}"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/alpinejs" defer></script>
-
     <!-- Custom JS Modules -->
     <script src="{{ asset('js/ajax-handler.js') }}"></script>
     <script src="{{ asset('js/sidebar-dropdown-handler.js') }}"></script>
@@ -98,8 +96,8 @@
     <script src="{{ asset('js/doc-toggle.js') }}"></script>
     <script src="{{ asset('js/student-form-handler.js') }}"></script>
     <script src="{{ asset('js/course-form-handler.js')}}"></script>
+    <script src="{{ asset('js/marks-entry-form-handler.js')}}"></script>
     <script src="{{ asset('js/app.js') }}"></script>
-
 
 
 

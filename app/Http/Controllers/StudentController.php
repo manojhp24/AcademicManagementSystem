@@ -80,15 +80,15 @@ class StudentController extends Controller
         Document::create([
             "student_id" => $student->id,
             "marksheet_10th"=>$request->doc_10th,
-            "register_number_10th"=>$request->doc_10th_registerNumber,
+            "register_number_10th"=>$request->doc_10th_registerNumber ?? "Not Submitted",
             "marksheet_12th"=>$request->doc_12th,
-            "register_number_12th"=>$request->doc_12th_registerNumber,
+            "register_number_12th"=>$request->doc_12th_registerNumber ?? "Not Submitted",
             "marksheet_degree"=>$request->doc_degree,
-            "register_number_degree"=>$request->degree_marksheet_number,
+            "register_number_degree"=>$request->degree_marksheet_number ?? "Not Submitted",
             "migration"=>$request->doc_migration,
-            "migration_number"=>$request->migration_certificate_number,
+            "migration_number"=>$request->migration_certificate_number ?? "Not Submitted",
             "caste_certificate"=>$request->doc_caste,
-            "caste_certificate_number"=>$request->caste_certificate_number,
+            "caste_certificate_number"=>$request->caste_certificate_number ?? "Not Submitted",
 
         ]);
 

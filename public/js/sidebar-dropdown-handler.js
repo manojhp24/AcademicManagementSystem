@@ -1,4 +1,4 @@
-$(function(){
+$(function () {
     const dropdowns = [
         {
             button: ".dashboard-button",
@@ -15,22 +15,20 @@ $(function(){
             button: ".marks-entry-button",
             target: "#marks-dropdown",
         },
-        {
-            button: ".subject-button",
-            target: "#subject-dropdown",
-        },
     ];
 
-    dropdowns.forEach((current)=>{
-        $(current.button).click(function(){
-           dropdowns.forEach((item)=>{
-            if(item != current){
-                $(item.target).slideUp();
+    dropdowns.forEach((current) => {
+        $(current.button).click(function () {
+            if (document.activeElement.closest('#sidebar')) {
+                $('#sidebar').removeAttr('aria-hidden');
             }
-           })
-            $(current.target).slideToggle();
-        })
-    })
 
-    
-})
+            dropdowns.forEach((item) => {
+                if (item != current) {
+                    $(item.target).slideUp();
+                }
+            });
+            $(current.target).slideToggle();
+        });
+    });
+});
