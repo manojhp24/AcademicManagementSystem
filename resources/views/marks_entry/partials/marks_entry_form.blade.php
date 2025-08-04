@@ -1,4 +1,4 @@
-<div class="marks-entry-container m-4 flex flex-col gap-4">
+<div class="marks-entry-container flex flex-col gap-4">
 
     <div class="rounded bg-white border-l-4 border-blue-600 shadow-md p-4">
         <h1 class="text-2xl md:text-3xl font-bold text-gray-800">Student Marks Entry</h1>

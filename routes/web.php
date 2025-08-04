@@ -59,5 +59,6 @@ Route::prefix('marks')->group(
     function(){
         Route::get('/entrymarks',[MarksController::class,'entry_marks'])->name('marks_entry.entrymarks');
         Route::post('/store',[MarksController::class,'store'])->name('marks_entry.store');
+        Route::get('/marks-Details/{reg}',[MarksController::class,'view'])->name('marks_entry.view');
     }
 );

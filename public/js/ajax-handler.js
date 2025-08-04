@@ -19,6 +19,7 @@ const AjaxHandler = {
     loadPage: function (url, pushToHistory = true, clickedElement = null) {
         $(".ajax-link").removeClass("bg-blue-700");
         if(clickedElement)clickedElement.addClass("bg-blue-700");
+        
 
         $("#main-content").html(
             `<div style="display: flex; justify-content: center; align-items: center; height: 300px;"><div class="loader"></div></div>`
@@ -32,6 +33,7 @@ const AjaxHandler = {
                 if(pushToHistory){
                     window.history.pushState({}, "", url);
                 }
+                
 
                 if (typeof DropdownLoader !== "undefined")
                     DropdownLoader.init();

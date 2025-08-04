@@ -1,10 +1,18 @@
 <div class="w-full mx-auto flex flex-col gap-5">
-    <div class="rounded-md bg-white p-4   border-l-4 border-l-blue-600 shadow-md">
+   <div class="rounded-md bg-white p-4   border-l-4 border-l-blue-600 shadow-md flex justify-between items-center">
+     <div class="">
         <h1 class="text-2xl md:text-3xl font-bold text-gray-800">Add Subjects</h1>
         <p class="text-sm md:text-base text-gray-600 mt-1">
             Add Subjects records from this dashboard
         </p>
     </div>
+
+    <a href="{{route('subject.viewsubjects')}}" class="ajax-link">
+        <button class="bg-blue-700 p-3 text-white rounded-md hover:bg-blue-600 cursor-pointer">View Subjects</button>
+    </a>
+
+    
+   </div>
     <div class="w-full mx-auto p-6 bg-white rounded-lg shadow-md  border-dashed">
         <form id="course-form" class="grid grid-cols-1 md:grid-cols-2 gap-4" action="{{ route('subject.store') }}" method="POST" data-url="{{ route('subject.store') }}">
             @csrf

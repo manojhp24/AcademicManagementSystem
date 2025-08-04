@@ -20,14 +20,21 @@
         <div class="container bg-white border-t-4 border-t-blue-700 p-8 relative overflow-hidden">
             <!-- Decorative background elements -->
 
-            <div class="flex items-center gap-4 mb-4">
-                <div class="w-12 h-12 bg-blue-700 rounded-full flex items-center justify-center shadow-lg">
+            <div class="flex items-center justify-between mb-4">
+                <div class="flex gap-4 items-center">
+                    <div class="w-12 h-12 bg-blue-700 rounded-full flex items-center justify-center shadow-lg">
                     <i class="fas fa-user-graduate text-white text-lg"></i>
                 </div>
                 <div>
                     <h1 class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent mb-1">
                         {{ $student->student_name }}
                     </h1>
+                </div>
+                </div>
+                <div>
+                    <a href="{{ route('marks_entry.view',$student->roll_number)}}" class="ajax-link bg-blue-600 p-2 text-white rounded-md m-4 ">
+                        <button class="cursor-pointer">View Marks</button>
+                    </a>
                 </div>
             </div>
 
@@ -165,7 +172,7 @@
             </table>
         </div>
     </div>
+ 
+    </div>
 
-
-</div>
 </div>

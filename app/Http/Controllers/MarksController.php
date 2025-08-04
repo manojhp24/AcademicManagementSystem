@@ -23,6 +23,17 @@ class MarksController extends Controller
 
     }
 
+    public function view($reg){
+
+        $marks = Marks::where('reg_number',$reg)->get();
+
+        if(request()->ajax()){
+            return view('marks_entry.partials.view_marks_details',compact('marks'));
+        }
+
+        return view('marks_entry.view_marks',compact('marks'));
+    }
+
     public function store(Request $request){
        foreach($request->course_code as $i => $code){
         Marks::create([
