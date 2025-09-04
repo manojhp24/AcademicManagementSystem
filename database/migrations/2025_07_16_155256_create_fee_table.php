@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('fee', function (Blueprint $table) {
             $table->id();
             $table->foreignId('student_id')->constrained('students')->onDelete('cascade');
+            $table->string('mode_of_payment');
             $table->decimal('actual_fee',10,2);
             $table->decimal('discount',10,2);
             $table->decimal('registration_fee',10,2);

@@ -1,6 +1,7 @@
 <script>
-    const studentState = @json($student_details -> state);
+    window.studentState = @json($student_details->state ?? null);
 </script>
+
 
 <div class="w-full mx-auto">
 
@@ -36,8 +37,10 @@
 
 
 
-    <form class="space-y-8" action="{{ route('students.store') }}" method="POST" id="student-form"
-        data-url="{{ route('students.store') }}">
+    <form id="student-edit-form"
+      action="{{ route('students.update', $student_details->id) }}"
+      method="POST"
+      data-url="{{ route('students.update', $student_details->id) }}">
         @csrf
         <!-- Basic Information Section -->
         <div class=" section-card rounded-lg overflow-hidden mt-5">
@@ -113,12 +116,12 @@
                     </div>
                     <div>
                         <label class="block text-sm font-medium text-gray-700 mb-2">HSC %</label>
-                        <input type="number" name="hsc_percent" class="input-field" placeholder="HSC percentage" />
+                        <input type="number" name="hsc_percent" class="input-field" placeholder="HSC percentage" value="{{ $student_details->acdemicDetail->hsc_percent}}"/>
                     </div>
                     <div>
                         <label class="block text-sm font-medium text-gray-700 mb-2">Graduation %</label>
-                        <input type="number" name="graduation_percent" class="input-field"
-                            placeholder="Graduation percentage" />
+                        <input type="number" name="graduation_percent" class="input-field" 
+                            placeholder="Graduation percentage" value="{{ $student_details->acdemicDetail->graduation_percent}}"/>
                     </div>
                 </div>
             </div>
@@ -142,32 +145,32 @@
                     </div>
                     <div>
                         <label class="block text-sm font-medium text-gray-700 mb-2">Actual Fees</label>
-                        <input type="number" name="actual_fees" class="input-field" placeholder="Actual fees amount" />
+                        <input type="number" name="actual_fees" class="input-field" placeholder="Actual fees amount" value="{{ $student_details->fee->actual_fee }}"/>
                     </div>
                     <div>
                         <label class="block text-sm font-medium text-gray-700 mb-2">Discount</label>
-                        <input type="number" name="discount" class="input-field" placeholder="Discount amount" />
+                        <input type="number" name="discount" class="input-field" placeholder="Discount amount" value="{{ $student_details->fee->discount}}"/>
                     </div>
                     <div>
                         <label class="block text-sm font-medium text-gray-700 mb-2">Registration Fees</label>
                         <input type="number" name="registration_fees" class="input-field"
-                            placeholder="Registration fees" />
+                            placeholder="Registration fees" value="{{ $student_details->fee->registration_fee}}"/>
                     </div>
                     <div>
                         <label class="block text-sm font-medium text-gray-700 mb-2">Accommodation</label>
                         <select name="accommodation" id="accomodationDropdown"
                             class="mt-1 block w-full rounded-md border border-gray-300 p-2">
-                            <option value="Hostel">Hostel</option>
-                            <option value="PG">PG</option>
+                            <option value="Hostel" {{old('accommodation',$student_details->fee->accommodation ?? '') === 'Hostel' ? 'selected' : ''}}>Hostel</option>
+                            <option value="PG" {{ old('accommodation', $student_details->fee->accommodation ?? '') === 'PG' ? 'selected' : '' }}>PG</option>
                         </select>
                     </div>
                     <div>
                         <label class="block text-sm font-medium text-gray-700 mb-2">Exam</label>
                         <select name="Exam" id="ExamDropdown"
                             class="mt-1 block w-full rounded-md border border-gray-300 p-2">
-                            <option value="Hostel">AFMI</option>
-                            <option value="PG">MCAER</option>
-                            <option value="PG">CMAT</option>
+                            <option value="AFMI">AFMI</option>
+                            <option value="MCAER">MCAER</option>
+                            <option value="CMAT">CMAT</option>
                         </select>
                     </div>
                 </div>
@@ -184,17 +187,25 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <!-- 10th Marksheet -->
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
-                        <div class="checkbox-container">
-                            <input type="hidden" name="doc_10th" value="0">
-                            <input type="checkbox" name="doc_10th" id="doc_10th" class="doc-toggle" value="1"
-                                data-target="#doc_10th_input" />
-                            <label for="doc_10th" class="text-sm font-medium text-gray-700">10th Marksheet</label>
-                        </div>
-                        <div id="doc_10th_input" class="hidden">
-                            <input type="text" id="10th_ms" name="doc_10th_registerNumber"
-                                class="form-input block w-full rounded-md border border-gray-300 p-2.5"
-                                placeholder="10th Marksheet Number" />
-                        </div>
+                            <div class="checkbox-container">
+        <input type="hidden" name="doc_10th" value="0">
+        <input type="checkbox"
+               name="doc_10th"
+               id="doc_10th"
+               class="doc-toggle"
+               value="1"
+               data-target="#doc_10th_input"
+               {{ $student_details->document->marksheet_10th ? 'checked' : '' }} />
+        <label for="doc_10th" class="text-sm font-medium text-gray-700">10th Marksheet</label>
+    </div>
+    <div id="doc_10th_input" class="{{ $student_details->document->marksheet_10th ? '' : 'hidden' }}">
+        <input type="text"
+               id="10th_ms"
+               name="doc_10th_registerNumber"
+               value="{{ $student_details->document->register_number_10th ?? '' }}"
+               class="form-input block w-full rounded-md border border-gray-300 p-2.5"
+               placeholder="10th Marksheet Number" />
+    </div>
                     </div>
 
                     <!-- 12th Marksheet -->
@@ -202,13 +213,13 @@
                         <div class="checkbox-container">
                             <input type="hidden" name="doc_12th" value="0">
                             <input type="checkbox" name="doc_12th" id="doc_12th" class="doc-toggle" value="1"
-                                data-target="#12th_marksheet_number" />
+                                data-target="#12th_marksheet_number" {{ $student_details->document->marksheet_12th ? 'checked' : '' }} />
                             <label for="doc_12th" class="text-sm font-medium text-gray-700">12th Marksheet</label>
                         </div>
-                        <div id="12th_marksheet_number" class="hidden">
+                        <div id="12th_marksheet_number" class="{{ $student_details->document->marksheet_12th ? '' : 'hidden' }}">
                             <input type="text" name="doc_12th_registerNumber"
                                 class="block w-full rounded-md border border-gray-300 p-2.5"
-                                placeholder="12th Marksheet Number" />
+                                placeholder="12th Marksheet Number" value="{{ $student_details->document->register_number_12th ?? "" }}"/>
                         </div>
                     </div>
 
@@ -217,13 +228,13 @@
                         <div class="checkbox-container">
                             <input type="hidden" name="doc_degree" value="0">
                             <input type="checkbox" name="doc_degree" id="doc_degree" class="doc-toggle" value="1"
-                                data-target="#degree_marksheet_number" />
+                                data-target="#degree_marksheet_number" {{ $student_details->document->marksheet_degree ? 'checked' : '' }}/>
                             <label for="doc_degree" class="text-sm font-medium text-gray-700">Degree/PDC</label>
                         </div>
-                        <div id="degree_marksheet_number" class="hidden">
+                        <div id="degree_marksheet_number" class="{{ $student_details->document->marksheet_degree ? '' : 'hidden'}}">
                             <input type="text" name="degree_marksheet_number"
                                 class="block w-full rounded-md border border-gray-300 p-2.5"
-                                placeholder="Degree Marksheet Number">
+                                placeholder="Degree Marksheet Number" value="{{ $student_details->document->register_number_degree ?? '' }}" >
                         </div>
                     </div>
 
@@ -232,13 +243,13 @@
                         <div class="checkbox-container">
                             <input type="hidden" name="doc_migration" value="0">
                             <input type="checkbox" name="doc_migration" id="doc_migration" class="doc-toggle" value="1"
-                                data-target="#migration_certificate_number" />
+                                data-target="#migration_certificate_number" {{ $student_details->document->migration ? 'checked' : '' }}/>
                             <label for="doc_migration" class="text-sm font-medium text-gray-700">Migration/TC</label>
                         </div>
-                        <div id="migration_certificate_number" class="hidden">
+                        <div id="migration_certificate_number" class="{{ $student_details->document->migration ? '' : 'hidden'}}">
                             <input type="text" name="migration_certificate_number"
                                 class="block w-full rounded-md border border-gray-300 p-2.5"
-                                placeholder="Migration Certificate Number">
+                                placeholder="Migration Certificate Number" value="{{ $student_details->document->migration_number ?? '' }}" >
                         </div>
                     </div>
 
@@ -247,13 +258,13 @@
                         <div class="checkbox-container">
                             <input type="hidden" name="doc_caste" value="0">
                             <input type="checkbox" name="doc_caste" id="doc_caste" class="doc-toggle" value="1"
-                                data-target="#caste_certificate_number" />
+                                data-target="#caste_certificate_number" {{ $student_details->document->caste_certificate ? 'checked' : '' }}/>
                             <label for="doc_caste" class="text-sm font-medium text-gray-700">Caste Certificate</label>
                         </div>
-                        <div id="caste_certificate_number" class="hidden">
+                        <div id="caste_certificate_number" class="{{ $student_details->document->migration ? '' : 'hidden'}}">
                             <input type="text" name="caste_certificate_number"
                                 class="block w-full rounded-md border border-gray-300 p-2.5"
-                                placeholder="Caste-Certificate Number">
+                                placeholder="Caste-Certificate Number" value="{{ $student_details->document->caste_certificate_number ?? '' }}">
                         </div>
                     </div>
                 </div>
@@ -267,7 +278,7 @@
             <div class="flex gap-4 justify-center">
                 <button type="submit" class="btn-primary bg-blue-600 flex items-center ">
                     <i class="fas fa-plus"></i>
-                    Add Student
+                    Update Student
                 </button>
                 <button type="reset" class="btn-secondary flex items-center gap-2">
                     <i class="fas fa-redo"></i>

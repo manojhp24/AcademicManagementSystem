@@ -30,6 +30,8 @@ Route::prefix('students')->group(function () {
     Route::get('/view', [StudentController::class, 'view'])->name('students.view');
     Route::post('/add',[StudentController::class, 'store'])->name('students.store');
     Route::get('/studentdetail/{id}',[StudentController::class,'show'])->name('students.details');
+    Route::get('/edit-student/{id}',[StudentController::class,'update'])->name('students.edit');
+    Route::post('/update/{id}', [StudentController::class, 'updateStudent'])->name('students.update');
 });
 
 // Lecturers Management Routes

@@ -28,7 +28,7 @@
     @include('components.sidebar')
 
     <!-- Main Content -->
-    <div class="sm:ml-64 min-h-screen flex flex-col">
+    <div class="sm:ml-64 min-h-screen flex flex-col ">
 
         <!-- Navbar -->
         <div class="flex items-center justify-between bg-white shadow px-6 h-16">

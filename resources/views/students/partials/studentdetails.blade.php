@@ -121,6 +121,10 @@
             <table class="min-w-full divide-y divide-gray-200">
                 <tbody class="divide-y divide-gray-100 text-sm text-gray-700">
                     <tr>
+                        <td class="px-4 py-2 font-semibold w-1/3">Payment Mode</td>
+                        <td class="px-4 py-2">{{ $student->fee->mode_of_payment}}</td>
+                    </tr>
+                    <tr>
                         <td class="px-4 py-2 font-semibold w-1/3">Actual Fee</td>
                         <td class="px-4 py-2">{{ $student->fee->actual_fee}}</td>
                     </tr>

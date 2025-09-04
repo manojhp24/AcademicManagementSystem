@@ -135,6 +135,13 @@
             <div class="p-6">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Mode of Payment</label>
+                        <select name="mode_of_payment" id="paymentModeDropdown" class="mt-1 block w-full rounded-md border border-gray-300 p-2">
+                            <option value="">Select payment mode</option>
+                            <option value="Loan">Loan</option>
+                        </select>
+                    </div>
+                    <div>
                         <label class="block text-sm font-medium text-gray-700 mb-2">Actual Fees</label>
                         <input type="number" name="actual_fees" class="input-field" placeholder="Actual fees amount" />
                     </div>

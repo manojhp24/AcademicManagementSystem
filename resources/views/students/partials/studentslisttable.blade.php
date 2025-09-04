@@ -57,7 +57,7 @@
                         <a href="{{ route('students.details',$student->id) }}" class="ajax-link underline text-blue-500" title="View Details">
                             <i class="fa-solid fa-eye"></i>
                         </a>
-                        <a href="#" class="ajax-link text-green-700" title="Edit ">
+                        <a href="{{ route('students.edit',$student->id)}}" class="ajax-link text-green-700" title="Edit ">
                             <i class="fa-solid fa-pen-to-square"></i>
                         </a>
                         <a href="#" class="ajax-link text-red-700" title="Delete">

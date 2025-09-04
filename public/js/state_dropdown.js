@@ -47,6 +47,11 @@ const DropdownLoader = {
             );
         });
 
+        if (typeof window.studentState !== "undefined" && window.studentState) {
+            $dropdown.val(window.studentState);
+        }
+
+
     }
 }
 

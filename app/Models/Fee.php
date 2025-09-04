@@ -9,6 +9,7 @@ class Fee extends Model
     protected $table = 'fee';
     protected $fillable = [
         "student_id",
+        "mode_of_payment",
         "actual_fee",
         "discount",
         "registration_fee",

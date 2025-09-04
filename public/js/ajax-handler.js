@@ -43,20 +43,30 @@ const AjaxHandler = {
                     CheckboxToggleHandler.init();
                 if (
                     $("#student-form").length &&
-                    typeof StudentFormHandler !== "undefined"
+                    typeof StudentFormHandler !== "undefined"   
                 ) {
                     StudentFormHandler.init();
+                };
+                if (
+                    $("#student-edit-form").length &&
+                    typeof StudentUpdateHandler !== "undefined"   
+                ) {
+                    StudentUpdateHandler.init();
                 };
                 if (typeof MarksEntryFormHandler !== "undefined") MarksEntryFormHandler.init();
                 if (typeof CourseFormHandler !== "undefined") CourseFormHandler.init();
 
 
             },
-            error: function () {
+            error: function (xhr, status, error) {
+                console.error("AJAX Error:", status, error);
+                console.error("Response:", xhr.responseText);
+
                 $("#main-content").html(
-                    '<div class="text-red-500">Error loading content.</div>'
+                    `<div class="text-red-500">Error: ${status} - ${error}</div>`
                 );
-            },
+            }
+
         });
 
     }
