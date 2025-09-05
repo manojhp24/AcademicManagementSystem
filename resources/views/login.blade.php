@@ -169,7 +169,7 @@
         <!-- Logo/Header -->
         <div class="text-center mb-8">
             <div class="logo-container text-3xl font-bold mb-2">
-                <i class="fas fa-shield-alt"></i> SAMS
+                <i class="fas fa-shield-alt"></i> AMS
             </div>
             <h2 class="text-2xl font-semibold text-gray-800 mb-2">Admin Login</h2>
             <p class="text-gray-600 text-sm">Welcome back! Please sign in to your account.</p>

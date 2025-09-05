@@ -54,19 +54,17 @@ const CourseFormHandler = {
     },
 
     showToast: function (message = "Success", isSuccess = true) {
-        const toast = document.createElement("div");
-        toast.className = "toast";
-        toast.style.backgroundColor = isSuccess ? "#fff" : "#e53e3e";
-        toast.innerHTML = `<i class="fa-solid fa-circle-${
-            isSuccess ? "check" : "xmark"
-        }"></i> ${message}`;
+        if (!$("#toast-box").length) {
+            $("body").append('<div id="toast-box" class="fixed top-5 right-5 z-50 flex flex-col gap-2"></div>');
+        }
 
-        const container = document.getElementById("toast-box");
-        container.appendChild(toast);
+        const toast = $(`<div class="toast px-4 py-2 rounded shadow-lg flex items-center gap-2">
+            <i class="fa-solid fa-circle-${isSuccess ? "check" : "xmark"}"></i>${message}
+        </div>`).css("background-color", isSuccess ? "#fff" : "#e53e3e");
 
-        setTimeout(() => {
-            toast.remove();
-        }, 5000);
+        $("#toast-box").append(toast);
+
+        setTimeout(() => toast.fadeOut(500, function () { $(this).remove(); }), 5000);
     },
 
     resetForm : function(){

@@ -3,23 +3,20 @@ const AjaxHandler = {
         $(document).on("click", ".ajax-link", function (e) {
             e.preventDefault();
             const url = $(this).attr("href");
-            AjaxHandler.loadPage(url,true,$(this));
+            AjaxHandler.loadPage(url, true, $(this));
         });
 
-        window.onpopstate = function(){
-            AjaxHandler.loadPage(location.pathname,false);
+        window.onpopstate = function () {
+            AjaxHandler.loadPage(location.pathname, false);
             console.log(location.pathname);
-
-        }
+        };
 
         AjaxHandler.loadPage(location.pathname, false);
     },
 
-
     loadPage: function (url, pushToHistory = true, clickedElement = null) {
         $(".ajax-link").removeClass("bg-blue-700");
-        if(clickedElement)clickedElement.addClass("bg-blue-700");
-        
+        if (clickedElement) clickedElement.addClass("bg-blue-700");
 
         $("#main-content").html(
             `<div style="display: flex; justify-content: center; align-items: center; height: 300px;"><div class="loader"></div></div>`
@@ -30,10 +27,9 @@ const AjaxHandler = {
             type: "GET",
             success: function (response) {
                 $("#main-content").html(response);
-                if(pushToHistory){
+                if (pushToHistory) {
                     window.history.pushState({}, "", url);
                 }
-                
 
                 if (typeof DropdownLoader !== "undefined")
                     DropdownLoader.init();
@@ -43,20 +39,26 @@ const AjaxHandler = {
                     CheckboxToggleHandler.init();
                 if (
                     $("#student-form").length &&
-                    typeof StudentFormHandler !== "undefined"   
+                    typeof StudentFormHandler !== "undefined"
                 ) {
                     StudentFormHandler.init();
-                };
+                }
                 if (
                     $("#student-edit-form").length &&
-                    typeof StudentUpdateHandler !== "undefined"   
+                    typeof StudentUpdateHandler !== "undefined"
                 ) {
                     StudentUpdateHandler.init();
-                };
-                if (typeof MarksEntryFormHandler !== "undefined") MarksEntryFormHandler.init();
-                if (typeof CourseFormHandler !== "undefined") CourseFormHandler.init();
+                }
+                if (typeof MarksEntryFormHandler !== "undefined")
+                    MarksEntryFormHandler.init();
+                if (typeof CourseFormHandler !== "undefined")
+                    CourseFormHandler.init();
+                if (typeof
+                    StudentDeleteHandler !== "undefined")
+                    StudentDeleteHandler.init();
 
-
+                    
+                
             },
             error: function (xhr, status, error) {
                 console.error("AJAX Error:", status, error);
@@ -65,9 +67,7 @@ const AjaxHandler = {
                 $("#main-content").html(
                     `<div class="text-red-500">Error: ${status} - ${error}</div>`
                 );
-            }
-
+            },
         });
-
-    }
+    },
 };

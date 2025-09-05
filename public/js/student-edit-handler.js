@@ -1,6 +1,9 @@
 const StudentUpdateHandler = {
+    
     init: function () {
         this.bindEvents();
+        console.log("StudentUpdateHandler loaded");
+
     },
 
     bindEvents: function () {
@@ -13,7 +16,6 @@ const StudentUpdateHandler = {
         const form = $("#student-edit-form")[0];
         const formData = new FormData(form);
         const url = $("#student-edit-form").data("url");
-        console.log(url);
 
         $.ajax({
             url: url,
@@ -22,33 +24,31 @@ const StudentUpdateHandler = {
             contentType: false,
             processData: false,
             success: function (response) {
-                StudentUpdateHandler.showToast(
-                    "Student Updated successfully!",
-                    true
-                );
+                StudentUpdateHandler.showToast("Student Data Updated successfully!", true);
                 window.scrollTo({ top: 0, behavior: "smooth" });
+                setTimeout(function () {
+                    window.location.href = '/students/view'; 
+                }, 1000); 
             },
+            error: function () {
+                StudentUpdateHandler.showToast("Update failed!", false);
+            }
         });
     },
 
-    showSuccess: function () {
-        $("#success-message").html('<div id="toast-box"></div>');
-    },
-
-   
-
     showToast: function (message = "Success", isSuccess = true) {
-        const toast = document.createElement("div");
-        toast.className = "toast";
-        toast.style.backgroundColor = isSuccess ? "#fff" : "#e53e3e";
-        toast.innerHTML = `<i class="fa-solid fa-circle-${isSuccess ? "check" : "xmark"
-            }"></i> ${message}`;
+        // Create toast container if it doesn't exist
+        if (!$("#toast-box").length) {
+            $("body").append('<div id="toast-box" class="fixed top-5 right-5 z-50 flex flex-col gap-2"></div>');
+        }
 
-        const container = document.getElementById("toast-box");
-        container.appendChild(toast);
+        const toast = $(`<div class="toast px-4 py-2 rounded shadow-lg flex items-center gap-2">
+            <i class="fa-solid fa-circle-${isSuccess ? "check" : "xmark"}"></i>${message}
+        </div>`).css("background-color", isSuccess ? "#fff" : "#e53e3e");
 
-        setTimeout(() => {
-            toast.remove();
-        }, 4000);
-    },
+        $("#toast-box").append(toast);
+
+        setTimeout(() => toast.fadeOut(300, function () { $(this).remove(); }), 3000);
+    }
 };
+

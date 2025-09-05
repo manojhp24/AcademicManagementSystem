@@ -287,5 +287,5 @@
             </div>
         </div>
     </form>
-    <div id="toast-box"></div>
+
 </div>

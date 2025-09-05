@@ -60,7 +60,7 @@
                         <a href="{{ route('students.edit',$student->id)}}" class="ajax-link text-green-700" title="Edit ">
                             <i class="fa-solid fa-pen-to-square"></i>
                         </a>
-                        <a href="#" class="ajax-link text-red-700" title="Delete">
+                        <a href="{{ route('students.delete',$student->id)}}" id="deleteBtn" class="delete-link  text-red-700"  data-url="{{ route('students.delete', $student->id) }}" title="Delete">
                             <i class="fa-solid fa-trash"></i>
                         </a>
                     </div>
@@ -69,5 +69,22 @@
             @endforeach
         </tbody>
     </table>
+     <div id="deleteModal" class="fixed inset-0 flex items-center justify-center  hidden z-50 ">
+  <div class="bg-white rounded-xl shadow-lg w-96 p-6 relative fade-in">
+
+    <button id="closeModal" class="absolute top-3 right-3 text-gray-500 hover:text-gray-800">
+      &times;
+    </button>
+
+    <h2 class="text-xl font-semibold mb-4">Confirm Delete</h2>
+    <p class="mb-6 text-gray-700">Are you sure you want to delete this student? This action cannot be undone.</p>
+
+
+    <div class="flex justify-end gap-3">
+      <button id="cancelBtn" class="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300">Cancel</button>
+      <button id="confirmDeleteBtn" class="px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700">Delete</button>
+    </div>
+  </div>
+</div>
 </div>
 </div>

@@ -15,11 +15,18 @@ use App\Models\Student;
 */
 
 // Login Routes
-Route::get('/', function () {
-    return view('login'); // login form
+Route::get('/', function (\Illuminate\Http\Request $request) {
+    if($request->session()->has('is_admin_logged_in')){
+        return redirect()->route('admin.dashboard');
+    }
+    return response()->view('login')->header('Cache-Control', 'no-cache, no-store, must-revalidate')
+        ->header('Pragma', 'no-cache')
+        ->header('Expires', '0');
 })->name('admin.login.form');
 
 Route::post('/admin/login-check', [AdminController::class, 'loginCheck'])->name('admin.login');
+Route::get('/admin-logout', [AdminController::class, 'logout'])->name('admin.logout');
+
 
 // Admin Dashboard
 Route::get('/admin-dashboard', [AdminController::class, 'index'])->name('admin.dashboard');
@@ -32,6 +39,7 @@ Route::prefix('students')->group(function () {
     Route::get('/studentdetail/{id}',[StudentController::class,'show'])->name('students.details');
     Route::get('/edit-student/{id}',[StudentController::class,'update'])->name('students.edit');
     Route::post('/update/{id}', [StudentController::class, 'updateStudent'])->name('students.update');
+    Route::delete('/delete/{id}',[StudentController::class, 'delete'])->name('students.delete');
 });
 
 // Lecturers Management Routes

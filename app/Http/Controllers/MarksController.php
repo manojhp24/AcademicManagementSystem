@@ -26,12 +26,13 @@ class MarksController extends Controller
     public function view($reg){
 
         $marks = Marks::where('reg_number',$reg)->get();
+        $studentData = Student::where('roll_number', $reg)->first();
 
         if(request()->ajax()){
-            return view('marks_entry.partials.view_marks_details',compact('marks'));
+            return view('marks_entry.partials.view_marks_details',compact('marks','studentData'));
         }
 
-        return view('marks_entry.view_marks',compact('marks'));
+        return view('marks_entry.view_marks',compact('marks', 'studentData'));
     }
 
     public function store(Request $request){

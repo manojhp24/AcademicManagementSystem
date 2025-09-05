@@ -59,7 +59,7 @@
                             <hr class="my-1 border-gray-200">
                         </li>
                         <li>
-                            <a href=""
+                            <a href="{{ route('admin.logout') }}"
                                 class="block px-4 py-2 text-red-600 hover:bg-gray-100">Logout</a>
                         </li>
                     </ul>
@@ -95,6 +95,8 @@
     <script src="{{ asset('js/datatable-script.js') }}"></script>
     <script src="{{ asset('js/doc-toggle.js') }}"></script>
     <script src="{{ asset('js/student-form-handler.js') }}"></script>
+    <script src="{{ asset('js/student-edit-handler.js') }}"></script>
+    <script src="{{ asset('js/student-delete-handler.js') }}"></script>
     <script src="{{ asset('js/course-form-handler.js')}}"></script>
     <script src="{{ asset('js/marks-entry-form-handler.js')}}"></script>
     <script src="{{ asset('js/app.js') }}"></script>

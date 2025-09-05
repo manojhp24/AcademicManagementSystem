@@ -7,6 +7,7 @@ use App\Models\Fee;
 use App\Models\Student;
 use App\Models\Document;
 use Illuminate\Http\Request;
+use PhpParser\Node\Expr\FuncCall;
 
 class StudentController extends Controller
 {
@@ -50,6 +51,24 @@ class StudentController extends Controller
 
         return view('students.editstudent',compact('student_details'));
     }
+
+    public function delete($id)
+    {
+        $student = Student::find($id); 
+
+        if (!$student) {
+            return response()->json(['message' => 'Student already deleted or not found.'], 200);
+        }
+
+        $student->acdemicDetail()->delete();
+        $student->fee()->delete();
+        $student->document()->delete();
+
+        $student->delete();
+
+        return response()->json(['message' => 'Student deleted successfully.']);
+    }
+
 
 
 
@@ -154,6 +173,7 @@ class StudentController extends Controller
             "caste_certificate_number" => $request->caste_certificate_number ?? "Not Submitted",
         ]);
 
-        return response()->json(['message' => 'Student data updated successfully.']);
+        return redirect()->route('students.view')
+            ->with('success', 'Student data updated successfully.');
     }
 }

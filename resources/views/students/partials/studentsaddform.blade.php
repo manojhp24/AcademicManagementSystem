@@ -31,7 +31,8 @@
 
 
 
-    <form class="space-y-8" action="{{ route('students.store') }}" method="POST" id="student-form" data-url="{{ route('students.store') }}">
+  <form id="student-form" action="{{ route('students.store') }}" method="POST" data-url="{{ route('students.store') }}">
+
         @csrf
         <!-- Basic Information Section -->
         <div class=" section-card rounded-lg overflow-hidden mt-5">
@@ -259,5 +260,4 @@
             </div>
         </div>
     </form>
-    <div id="toast-box"></div>
 </div>
