@@ -33,8 +33,8 @@ Route::get('/admin-dashboard', [AdminController::class, 'index'])->name('admin.d
 
 // Student Management Routes 
 Route::prefix('students')->group(function () {
-    Route::get('/create', [StudentController::class, 'create'])->name('students.addstudents');
     Route::get('/view', [StudentController::class, 'view'])->name('students.view');
+    Route::get('/add', [StudentController::class, 'create'])->name('students.addstudents');
     Route::post('/add',[StudentController::class, 'store'])->name('students.store');
     Route::get('/studentdetail/{id}',[StudentController::class,'show'])->name('students.details');
     Route::get('/edit-student/{id}',[StudentController::class,'update'])->name('students.edit');

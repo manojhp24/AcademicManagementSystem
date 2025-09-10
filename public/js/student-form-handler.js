@@ -40,10 +40,8 @@ const StudentFormHandler = {
     },
 
     resetForm: function () {
-        const form = $("#student-form")[0];
-        form.reset();
-        $('#student-form input[type="checkbox"]').prop("checked", false).trigger("change");
-        $('#student-form input[type="text"]').val(''); 
+        const courseForm = $("#student-form")[0];
+        courseForm.reset();
     },
 
 

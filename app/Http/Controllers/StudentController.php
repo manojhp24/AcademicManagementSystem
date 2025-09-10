@@ -173,7 +173,6 @@ class StudentController extends Controller
             "caste_certificate_number" => $request->caste_certificate_number ?? "Not Submitted",
         ]);
 
-        return redirect()->route('students.view')
-            ->with('success', 'Student data updated successfully.');
+        return response()->json(['success', 'Student data updated successfully.']);
     }
 }

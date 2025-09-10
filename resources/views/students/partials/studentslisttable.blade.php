@@ -63,6 +63,9 @@
                         <a href="{{ route('students.delete',$student->id)}}" id="deleteBtn" class="delete-link  text-red-700"  data-url="{{ route('students.delete', $student->id) }}" title="Delete">
                             <i class="fa-solid fa-trash"></i>
                         </a>
+                        <a href="{{ route('marks_entry.view',$student->roll_number)}}" class="ajax-link text-indigo-500 hover:text-indigo-700" title="View Marks">
+              <i class="fa-solid fa-file-circle-check"></i>
+            </a>
                     </div>
                 </td>
             </tr>

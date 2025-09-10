@@ -52,4 +52,8 @@ class MarksController extends Controller
        }
         return response()->json(["message" => "Successfully added"]);
     }
+
+    public function generateMarks(Request $request){
+        
+    }
 }

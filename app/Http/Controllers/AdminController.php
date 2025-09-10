@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Student;
+use App\Models\Fee;
+use App\Models\AcademicDetail;
 
 class AdminController extends Controller
 {
@@ -13,10 +16,12 @@ class AdminController extends Controller
                 ->with('error', 'Please login first');
         }
 
+        $totalStudents = Student::count();
+
         if ($request->ajax()) {
-            return view('admin.partials.contents');
+            return view('admin.partials.contents',compact("totalStudents"));
         }
-        return view('admin.dashboard');
+        return view('admin.dashboard', compact("totalStudents"));
     }
 
 
