@@ -3,7 +3,7 @@
 
 @section('content')
 
-@include('admin.partials.contents')
+@include('admin.partials.contents',['totalStudents' => $totalStudents])
 
 
 @endsection

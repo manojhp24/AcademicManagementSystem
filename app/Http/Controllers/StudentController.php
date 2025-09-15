@@ -6,6 +6,7 @@ use App\Models\AcademicDetail;
 use App\Models\Fee;
 use App\Models\Student;
 use App\Models\Document;
+use App\Models\Marks;
 use Illuminate\Http\Request;
 use PhpParser\Node\Expr\FuncCall;
 
@@ -63,6 +64,7 @@ class StudentController extends Controller
         $student->acdemicDetail()->delete();
         $student->fee()->delete();
         $student->document()->delete();
+        $student->marks()->delete();
 
         $student->delete();
 

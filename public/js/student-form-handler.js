@@ -47,15 +47,20 @@ const StudentFormHandler = {
 
     showToast: function (message = "Success", isSuccess = true) {
         if (!$("#toast-box").length) {
-            $("body").append('<div id="toast-box" class="fixed top-5 right-5 z-50 flex flex-col gap-2"></div>');
+            $("body").append('<div id="toast-box" class="fixed bottom-5 right-5 z-50 flex flex-col gap-2"></div>');
         }
 
-        const toast = $(`<div class="toast px-4 py-2 rounded shadow-lg flex items-center gap-2">
-            <i class="fa-solid fa-circle-${isSuccess ? "check" : "xmark"}"></i>${message}
-        </div>`).css("background-color", isSuccess ? "#fff" : "#e53e3e");
+        const toast = $(`
+        <div class="toast flex items-center gap-3 px-4 py-3 rounded-xl shadow-lg text-sm font-medium text-bl
+            ${isSuccess ? "bg-green-600" : "bg-red-600"} animate-slideInUp">
+            <i class="fa-solid fa-circle-${isSuccess ? "check" : "xmark"}"></i>
+            <span>${message}</span>
+        </div>
+    `);
 
         $("#toast-box").append(toast);
 
         setTimeout(() => toast.fadeOut(500, function () { $(this).remove(); }), 5000);
     }
+
 };

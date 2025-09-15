@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('marks', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('student_id');
+            $table->foreign('student_id')
+                ->references('id')
+                ->on('students');
             $table->string('reg_number')->uniqiue();
             $table->string('course_code');
             $table->integer('credits');

@@ -67,7 +67,7 @@
 </div>
 
 
-    <div class="bg-white rounded-2xl shadow-lg p-6">
+    <div class="bg-white rounded-2xl shadow-lg p-6 mt-6">
     <h3 class="text-xl font-bold text-gray-800 mb-6">Quick Actions</h3>
     <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
         
@@ -114,17 +114,6 @@
             <button class="text-sm text-blue-600 font-medium">View All</button>
         </div>
         <div class="space-y-4">
-            <div class="flex items-center">
-                <div class="bg-green-100 p-2 rounded-lg mr-4">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                </div>
-                <div>
-                    <p class="text-sm font-medium">Attendance marked for MCA Class</p>
-                    <p class="text-xs text-gray-500">10 minutes ago</p>
-                </div>
-            </div>
             <div class="flex items-center">
                 <div class="bg-blue-100 p-2 rounded-lg mr-4">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">

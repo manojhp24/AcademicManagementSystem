@@ -19,4 +19,10 @@ class Marks extends Model
         'grade_points',
         'credits_points',   
     ];
+
+    public function student()
+    {
+        return $this->belongsTo(Student::class);
+    }
+
 }

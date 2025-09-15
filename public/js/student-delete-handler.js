@@ -1,20 +1,36 @@
 const StudentDeleteHandler = {
     init: function () {
+        if (this.eventsBound) return; // ✅ prevent double init
         this.bindEvents();
+        this.eventsBound = true;
         console.log("StudentDeleteHandler loaded");
     },
 
     bindEvents: function () {
-        $(document).on("click", ".delete-link", (e) => {
+        const self = this; // ✅ preserve context
+
+        // Remove old bindings before adding new ones
+        $(document).off("click", ".delete-link")
+            .off("click", "#closeModal, #cancelBtn")
+            .off("click", "#confirmDeleteBtn");
+
+        // Delete link click
+        $(document).on("click", ".delete-link", function (e) {
             e.preventDefault();
-            this.currentUrl = $(e.currentTarget).data("url");
-            this.row = $(e.currentTarget).closest("tr"); // row to remove after delete
-            this.openModal();
+            self.currentUrl = $(this).data("url");
+            self.row = $(this).closest("tr"); // row to remove after delete
+            self.openModal();
         });
 
-        $(document).on("click", "#closeModal, #cancelBtn", () => this.closeModalFunc());
+        // Cancel modal
+        $(document).on("click", "#closeModal, #cancelBtn", function () {
+            self.closeModalFunc();
+        });
 
-        $(document).on("click", "#confirmDeleteBtn", () => this.deleteStudent());
+        // Confirm delete
+        $(document).on("click", "#confirmDeleteBtn", function () {
+            self.deleteStudent();
+        });
     },
 
     openModal: function () {
@@ -46,7 +62,6 @@ const StudentDeleteHandler = {
                 console.error("AJAX Delete Error:", status, error);
                 console.error("Response:", xhr.responseText);
             }
-
         });
     },
 
@@ -54,6 +69,9 @@ const StudentDeleteHandler = {
         if (!$("#toast-box").length) {
             $("body").append('<div id="toast-box" class="fixed top-5 right-5 z-50 flex flex-col gap-2"></div>');
         }
+
+        // optional: clear old toast to avoid stacking
+        $("#toast-box").empty();
 
         const toast = $(`<div class="toast px-4 py-2 rounded shadow-lg flex items-center gap-2">
             <i class="fa-solid fa-circle-${isSuccess ? "check" : "xmark"}"></i>${message}
@@ -65,3 +83,7 @@ const StudentDeleteHandler = {
     }
 };
 
+// ✅ Initialize once on page load
+$(document).ready(function () {
+    StudentDeleteHandler.init();
+});

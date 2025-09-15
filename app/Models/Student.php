@@ -29,4 +29,8 @@ class Student extends Model
     public function document(){
         return $this->hasOne(Document::class);
     }
+
+    public function marks(){
+        return $this->hasMany(Marks::class);
+    }
 }

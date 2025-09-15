@@ -66,7 +66,6 @@ const CourseFormHandler = {
 
         setTimeout(() => toast.fadeOut(500, function () { $(this).remove(); }), 5000);
     },
-
     resetForm : function(){
         const courseForm = $("#course-form")[0];
         courseForm.reset();

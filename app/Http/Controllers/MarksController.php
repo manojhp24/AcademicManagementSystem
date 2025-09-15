@@ -36,8 +36,16 @@ class MarksController extends Controller
     }
 
     public function store(Request $request){
+        $student = Student::where('roll_number', $request->reg_number)->first();
+
+        if (!$student) {
+            return response()->json([
+                "message" => "Student not found"
+            ], 404);
+        }
        foreach($request->course_code as $i => $code){
         Marks::create([
+            'student_id'=>$student->id,
             'reg_number'=> $request->reg_number,
             'course_code'=> $code,
             'credits'=>$request->credits[$i],   
