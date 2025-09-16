@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ImportExportController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\LecturersController;
 use App\Http\Controllers\SubjectController;
@@ -70,5 +71,13 @@ Route::prefix('marks')->group(
         Route::get('/entrymarks',[MarksController::class,'entry_marks'])->name('marks_entry.entrymarks');
         Route::post('/store',[MarksController::class,'store'])->name('marks_entry.store');
         Route::get('/marks-Details/{reg}',[MarksController::class,'view'])->name('marks_entry.view');
+    }
+);
+
+//Import Export Management
+Route::prefix('import-export')->group(
+    function(){
+        Route::get('/export',[ImportExportController::class,'exportView'])->name('export_import.export');
+        Route::get('/import',[ImportExportController::class,'importView'])->name('export_import.import');
     }
 );

@@ -91,7 +91,7 @@
         </div>
 
         <!-- Academic Information Section -->
-        <div class="section-card rounded-lg overflow-hidden">
+        <div class="section-card rounded-lg overflow-hidden my-5">
             <div class="section-header">
                 <i class="fas fa-book"></i>
                 <span>Academic Information</span>
@@ -128,7 +128,7 @@
         </div>
 
         <!-- Fee Information Section -->
-        <div class="section-card rounded-lg overflow-hidden">
+        <div class="section-card rounded-lg overflow-hidden my-5">
             <div class="section-header">
                 <i class="fas fa-money-bill-wave"></i>
                 <span>Fee Information</span>
@@ -174,7 +174,7 @@
         </div>
 
         <!-- Documents Section -->
-        <div class="section-card rounded-lg overflow-hidden">
+        <div class="section-card rounded-lg overflow-hidden my-5">
             <div class="section-header">
                 <i class="fas fa-file-alt"></i>
                 <span>Documents Submitted</span>

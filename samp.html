@@ -1,13 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sidebar Layout - Tailwind with Aside</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-amber-200">
+<body class="h-screen flex font-sans">
 
+  <!-- Sidebar -->
+  <aside class="w-64 border-2 border-dashed border-gray-500 p-4">
+    <p class="font-bold text-gray-500 mb-4">Sidebar (aside)</p>
+    <ul class="space-y-2">
+      <li><a href="#" class="block p-2 hover:bg-gray-100 rounded">Dashboard</a></li>
+      <li><a href="#" class="block p-2 hover:bg-gray-100 rounded">Profile</a></li>
+      <li><a href="#" class="block p-2 hover:bg-gray-100 rounded">Settings</a></li>
+    </ul>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="flex-1 border-2 border-dashed border-blue-500 p-6">
+    <p class="font-bold text-blue-500 mb-4">Main Content (main)</p>
+    <h1 class="text-2xl font-bold">Welcome</h1>
+    <p>This is the content area.</p>
+  </main>
 
 </body>
 </html>

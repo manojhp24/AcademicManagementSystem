@@ -155,7 +155,7 @@
             </button>
             <ul id="imp-exp-dropdown" class="hidden space-y-1 ml-6">
                 <li>
-                    <a href="" class="ajax-link flex items-center gap-2 py-1 hover:bg-blue-500 rounded px-2">
+                    <a href="{{ route('export_import.export')}}" class="ajax-link flex items-center gap-2 py-1 hover:bg-blue-500 rounded px-2">
                        <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" width="800px" height="800px" viewBox="0 0 24 24" fill="none">
 <g id="Communication / Share_iOS_Export">
 <path id="Vector" d="M9 6L12 3M12 3L15 6M12 3V13M7.00023 10C6.06835 10 5.60241 10 5.23486 10.1522C4.74481 10.3552 4.35523 10.7448 4.15224 11.2349C4 11.6024 4 12.0681 4 13V17.8C4 18.9201 4 19.4798 4.21799 19.9076C4.40973 20.2839 4.71547 20.5905 5.0918 20.7822C5.5192 21 6.07899 21 7.19691 21H16.8036C17.9215 21 18.4805 21 18.9079 20.7822C19.2842 20.5905 19.5905 20.2839 19.7822 19.9076C20 19.4802 20 18.921 20 17.8031V13C20 12.0681 19.9999 11.6024 19.8477 11.2349C19.6447 10.7448 19.2554 10.3552 18.7654 10.1522C18.3978 10 17.9319 10 17 10" stroke="#ffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -165,7 +165,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="" class="ajax-link flex items-center gap-2 py-1 hover:bg-blue-500 rounded px-2">
+                    <a href="{{ route('export_import.import') }}" class="ajax-link flex items-center gap-2 py-1 hover:bg-blue-500 rounded px-2">
                       
 
                         <svg fill="#ffffff" class="h-5 w-5" height="200px" width="200px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <g> <path d="M435.2,153.6H320v25.6h102.4v307.2H89.6V179.2H192v-25.6H76.8c-7.066,0-12.8,5.734-12.8,12.8v332.8 c0,7.066,5.734,12.8,12.8,12.8h358.4c7.066,0,12.8-5.734,12.8-12.8V166.4C448,159.334,442.266,153.6,435.2,153.6z"></path> </g> </g> <g> <g> <path d="M341.956,234.249c-4.941-5.052-13.056-5.146-18.099-0.205L268.8,287.898V12.8C268.8,5.734,263.066,0,256,0 c-7.066,0-12.8,5.734-12.791,12.8v275.089l-55.057-53.854c-5.043-4.941-13.158-4.847-18.099,0.205 c-4.941,5.06-4.855,13.158,0.205,18.099l76.8,75.128c5.043,4.949,13.158,4.855,18.099-0.188l76.595-74.931 C346.803,247.407,346.897,239.309,341.956,234.249z"></path> </g> </g> </g></svg>
