@@ -43,7 +43,7 @@ npm install
 npm run build
 ```
 
-4. ** Set up environment**
+4. **Set up environment**
 ```bash
 cp .env.example .env
 ```
