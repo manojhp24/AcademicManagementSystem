@@ -24,6 +24,10 @@ A centralized system for managing students, faculty, courses, and results, built
 git clone https://github.com/yourusername/AcademicManagementSystem.git
 cd AcademicManagementSystem
 ```
+Note: To open the project in VS Code from the terminal, run:
+```bash
+code .
+```
 
 2. **Install PHP dependencies**
 ```bash
