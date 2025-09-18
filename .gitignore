@@ -1,47 +1,47 @@
 # Laravel & PHP
-/vendor/
-node_modules/
-bootstrap/cache/
-storage/*.key
-storage/app/public
-storage/framework/cache/*
-storage/framework/sessions/*
-storage/framework/views/*
-storage/logs/*
+/vendor
+/node_modules
+/public/storage
+/storage/*.key
+/.idea
+/.vscode
+/.phpunit.result.cache
 
 # Environment files
 .env
 .env.backup
 .env.local
-.env.production
-.env.staging
+.env.*.local
 
-# Compiled assets
-/public/hot
-/public/storage
-/public/mix-manifest.json
-/public/css/*.css.map
-/public/js/*.js.map
+# Composer
+/composer.lock
 
-# IDE & OS specific
-.vscode/
-.idea/
-*.swp
-*.swo
-*~
+# NPM & Tailwind build files
+/package-lock.json
+/yarn.lock
+/pnpm-lock.yaml
+/public/css/output.css
+
+# OS files
 .DS_Store
 Thumbs.db
-desktop.ini
 
-# Testing
-.phpunit.result.cache
+# Logs & cache
+/storage/logs/*
+/bootstrap/cache/*
+/*.log
 
-# Logs
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
+# Coverage & testing
+/coverage
+.phpunit.cache
 
-# Misc
-composer.lock
-package-lock.json
+# Build artifacts
+/public/hot
+/public/mix-manifest.json
+/public/js/*.map
+/public/css/*.map
+
+# Backup & temp files
+*.bak
+*.tmp
+*.swp

@@ -1,6 +1,6 @@
 <div class="p-6 w-full space-y">
     <div class="text-3xl font-extrabold text-gray-800">Welcome Admin</div>
-    <div class="">Here is the Quick overview of the attendance system</div>
+    <div class="">Here is the Quick overview of the Academic Management System</div>
 </div>
 
 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
@@ -8,7 +8,7 @@
         <div class="flex justify-between items-center mb-4">
             <div>
                 <h3 class="text-sm uppercase font-medium opacity-80">Total Students</h3>
-                <p class="text-3xl font-extrabold">120</p>
+                <p class="text-3xl font-extrabold">{{  $totalStudents }}</p>
             </div>
             <div class="bg-white/20 p-3 rounded-full">
                 <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="currentColor" class="bi bi-people-fill" viewBox="0 0 16 16">
