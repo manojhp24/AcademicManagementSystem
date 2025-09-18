@@ -28,6 +28,10 @@ Note: To open the project in VS Code from the terminal, run:
 ```bash
 code .
 ```
+> **Tip:** To open the integrated terminal in VS Code, press:
+Ctrl + ` (backtick)
+This lets you run commands like `npm install` or `php artisan serve` directly inside VS Code.Then execute the below steps
+
 
 2. **Install PHP dependencies**
 ```bash
